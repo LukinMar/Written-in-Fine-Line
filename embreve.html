@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <title>EM BREVE</title>
+    <style>
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .card {
+            cursor: default !important;
+            margin-bottom: 2em !important;
+        }
+
+        .escritora {
+            color: salmon
+        }
+
+        .divider {
+            width: 80% !important;
+            margin: 2% auto 5em auto !important;
+        }
+
+        .segment {
+            width: 60%;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto !important;
+            padding-bottom: 3% !important;
+        }
+
+        .perfil {
+            display: flex;
+        }
+
+        .ui.small.image {
+            margin: 0 auto !important;
+            width: 150px !important;
+            height: auto !important;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .ui.menu.fixed {
+            height: 5% !important;
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+        .ui.menu {
+            background: none !important;
+        }
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .embreve {
+            text-align: center;
+            color: salmon
+        }
+
+        .autora {
+            margin-bottom: 10px !important
+        }
+
+        .fanfic,
+        .autora,
+        .categoria {
+            margin: 0;
+            color: salmon
+        }
+
+        .categoria {
+            font-size: 1em;
+            color: rgba(0, 0, 0, .4);
+            font-weight: normal;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .ui.menu:first-child {
+            width: 100%;
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false">
+    <div class="pusher">
+
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item active" href="embreve.html">EM BREVE</a>
+            <a class="item" href="trailers.html">TRAILERS</a>
+            <a class="item" href="calendario.html">CALENDÁRIO</a>
+            <a class="item" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+
+        <h1 class="embreve">EM BREVE</h1>
+        <div class="ui internally celled grid">
+
+            <!-- PRIMEIRA AUTORA -->
+            <div class="row">
+                <div class="three wide column"></div>
+                <div class="ten wide column">
+                    <h2 class="autora">NOME AUTORA</h2>
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="10" id="progresso1">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 10%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="30" id="progresso2">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 30%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+                    <!-- INSIRA UMA NOVA HISTÓRIA AQUI -->
+
+
+                </div>
+            </div>
+            <!-- FIM PRIMEIRA AUTORA -->
+
+
+            <!-- SEGUNDA AUTORA -->
+            <div class="row">
+                <div class="three wide column"></div>
+                <div class="ten wide column">
+                    <h2 class="autora">NOME AUTORA</h2>
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="100" id="progresso3">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 100%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="60" id="progresso4">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 60%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+                    <!-- INSIRA UMA NOVA HISTÓRIA AQUI -->
+
+
+                </div>
+            </div>
+            <!-- FIM SEGUNDA AUTORA -->
+
+            <!-- TERCEIRA AUTORA -->
+            <div class="row">
+                <div class="three wide column"></div>
+                <div class="ten wide column">
+                    <h2 class="autora">NOME AUTORA</h2>
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="90" id="progresso5">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 90%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+
+                    <!-- COMEÇA AQUI -->
+                    <h3 class="fanfic">HISTÓRIA</h3>
+                    <h5 class="categoria">CATEGORIA</h5>
+                    <br>
+                    <p>DESCRIÇÃO</p>
+                    <br>
+                    <div class="ui indicating progress" data-percent="80" id="progresso6">
+                        <div class="bar"></div>
+                        <div class="label">Progresso 80%</div>
+                    </div>
+                    <!-- TERMINA AQUI -->
+                    <!-- INSIRA UMA NOVA HISTÓRIA AQUI -->
+
+
+                </div>
+            </div>
+            <!-- FIM TERCEIRA AUTORA -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+            <script>
+                $('a.sidebar-toggle').click(function () {
+                    $('#sidebar').sidebar('toggle')
+                })
+                // CODIGO PARA MOSTRAR O PROGRESSO DAS BARRAS -
+                // CADA BARRA DE PROGRESSO DEVE TER UM ID ÚNICO
+                $('#progresso1').progress();
+                $('#progresso2').progress();
+                $('#progresso3').progress();
+                $('#progresso4').progress();
+                $('#progresso5').progress();
+                $('#progresso6').progress();
+            </script>
+</body>
+
+</html>

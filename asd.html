@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<!-- NÃO APAGAR AS DUAS LINHAS ABAIXO -->
+<script src="https://cdn.jsdelivr.net/gh/LukinMar/lukinmar.github.io@master/js/sweetalert2.all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+<!-- NÃO APAGAR AS DUAS LINHAS ACIMA -->
+
+</head>
+
+<style>
+    .swal2-confirm,
+    .swal2-styled {
+        background-color: #FA8072 !important;
+    }
+
+    .swal2-container.swal2-backdrop-show,
+    .swal2-container.swal2-noanimation {
+        background: white;
+    }
+
+    .slow-animation {
+        animation: swal2-show 0.01s !important;
+        animation: animateSuccessTip 0.1s;
+    }
+
+    html {
+        font-family: Arial, Verdana, sans-serif;
+        font-size: 14px;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-align: justify;
+    }
+
+    i,
+    em {
+        color: black;
+        text-decoration: none;
+    }
+
+    .capa-fanfic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .titulo-fanfic {
+        color: #FA8072;
+        text-align: center;
+        font-family: 'Arial', serif;
+    }
+
+    .nome-autora {
+        color: black;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+        font-family: 'Arial', serif;
+        margin: auto;
+    }
+
+    .twitter-autora {
+        color: black;
+        text-align: center;
+        font-size: larger;
+        font-family: 'Arial', serif;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .capitulo {
+        color: #FA8072;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .informacoes-fic {
+        background: white;
+        color: #000000;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 0.5em;
+    }
+
+    .informacoes-borda {
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(to right, #FA8072, #FA8072);
+        padding: 3px;
+        border-radius: 0.5em;
+    }
+
+    .informacoes-fic>p {
+        color: black;
+        font-weight: bold;
+        font-family: 'Arial', serif;
+        text-decoration: none;
+    }
+
+    .nomes {
+        color: black;
+    }
+
+    .rodape-logo>img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        width: 300px;
+    }
+
+    a {
+        color: #551a8b !important;
+    }
+</style>
+
+<body>
+
+    <!-- os ALERTAS e as PERGUNTAS podem ficar aqui, e não precisa abrir uma tag pra cada item  -->
+    <script>
+        Swal.mixin({
+            allowOutsideClick: false,
+            confirmButtonText: 'OK',
+        }).queue([
+            {
+                allowOutsideClick: false,
+                text: "Olá! Tudo bem?",
+                icon: "info",
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                text: "Vamos às perguntas?",
+                icon: "info",
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual o nome do personagem principal dessa história?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual o sobrenome dele?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "E os olhos dele, são de que cor?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "De acordo com a cor dos cabelos dele, ele é: moreno, loiro, ruivo...?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual a função que ele ocupa na banda? Vocalista, baterista, guitarrista ou baixista?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual o nome do melhor amigo dele?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "E qual é o sobrenome desse amigo?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Agora me diz, qual o nome da menina que o nosso principal tanto ama?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Lindo nome! Mas ela tem um apelido, não é? Qual seria?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "E qual é o sobrenome dela?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual a cor dos olhos dela? No plural, por favor!",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "De acordo com a cor dos cabelos dela, ela é: morena, loira, ruiva, ou...?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Qual o nome do cachorrinho que os dois adotaram juntos?",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Agora me diz o nome de um amigo próximo do casal!",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                input: 'text',
+                icon: "question",
+                text: "Por fim, me diz o nome de outro amigo dos dois!",
+                confirmButtonText: 'Próxima &rarr;',
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                text: "Já tenho tudo o que preciso!",
+                icon: "success",
+                customClass: 'slow-animation'
+            },
+            {
+                allowOutsideClick: false,
+                text: "Vamos à nossa última dança?",
+            }
+        ]).then((result) => {  // ATENÇÃO IMPORTANTE!! O Valor entre [] é baseado no número da fila que o alerta está. O PRIMEIRO ITEM DA FILA SEMPRE É O NÚMERO 0 
+
+
+            var Calum = document.querySelectorAll(".Calum");
+            [].forEach.call(Calum, function (Calum) {
+                Calum.innerHTML = result.value[2]
+            });
+
+            var Hood = document.querySelectorAll(".Hood");
+            [].forEach.call(Hood, function (Hood) {
+                Hood.innerHTML = result.value[3]
+            });
+
+            var castanhos = document.querySelectorAll(".castanhos");
+            [].forEach.call(castanhos, function (castanhos) {
+                castanhos.innerHTML = result.value[4]
+            });
+
+            var moreno = document.querySelectorAll(".moreno");
+            [].forEach.call(moreno, function (moreno) {
+                moreno.innerHTML = result.value[5]
+            });
+
+            var baixista = document.querySelectorAll(".baixista");
+            [].forEach.call(baixista, function (baixista) {
+                baixista.innerHTML = result.value[6]
+            });
+
+            var Ashton = document.querySelectorAll(".Ashton");
+            [].forEach.call(Ashton, function (Ashton) {
+                Ashton.innerHTML = result.value[7]
+            });
+
+            var Irwin = document.querySelectorAll(".Irwin");
+            [].forEach.call(Irwin, function (Irwin) {
+                Irwin.innerHTML = result.value[8]
+            });
+
+            var Amanda = document.querySelectorAll(".Amanda");
+            [].forEach.call(Amanda, function (Amanda) {
+                Amanda.innerHTML = result.value[9]
+            });
+
+            var Mandy = document.querySelectorAll(".Mandy");
+            [].forEach.call(Mandy, function (Mandy) {
+                Mandy.innerHTML = result.value[10]
+            });
+
+            var Steele = document.querySelectorAll(".Steele");
+            [].forEach.call(Steele, function (Steele) {
+                Steele.innerHTML = result.value[11]
+            });
+
+            var negros = document.querySelectorAll(".negros");
+            [].forEach.call(negros, function (negros) {
+                negros.innerHTML = result.value[12]
+            });
+
+            var morena = document.querySelectorAll(".morena");
+            [].forEach.call(morena, function (morena) {
+                morena.innerHTML = result.value[13]
+            });
+
+            var Duke = document.querySelectorAll(".Duke");
+            [].forEach.call(Duke, function (Duke) {
+                Duke.innerHTML = result.value[14]
+            });
+
+            var Luke = document.querySelectorAll(".Luke");
+            [].forEach.call(Luke, function (Luke) {
+                Luke.innerHTML = result.value[15]
+            });
+
+            var Michael = document.querySelectorAll(".Michael");
+            [].forEach.call(Michael, function (Michael) {
+                Michael.innerHTML = result.value[16]
+            });
+
+        })
+    </script>
+
+
+    <br>
+    <!-- CAPA -->
+    <img class="capa-fanfic" src="https://i.postimg.cc/pLmR8g08/Whats-App-Image-2020-08-13-at-1-02-13-AM.jpg">
+
+    <br>
+    <!-- TÍTULO E AUTORA -->
+    <h2 class="titulo-fanfic">Ghost Of You</h2>
+    <p class="nome-autora">Babi Lemos</p>
+    <p class="twitter-autora">Twitter: <a href="https://twitter.com/hsofmine" target="_blank">@hsofmine</a></p>
+
+
+    <!-- INFORMAÇÕES DA FIC -->
+    <div class="informacoes-borda">
+        <div class="informacoes-fic">
+
+            Inspirado em: <a
+                href="https://open.spotify.com/track/1MhXdlCQPnO56T57MfmaRm?si=l8S-3mloQg-vMmeKk7yS7Q">Ghost Of
+                You Por 5SOS</a><br><br>
+
+
+
+            <!-- SOMENTE SHORT/LONGFIC -->
+            Capítulos: <a href='#PRÓLOGO'>PRÓLOGO</a> - <a href='#UM'>UM</a> - <a href='#DOIS'>DOIS</a>
+        </div>
+    </div>
+
+
+    <!-- SOMENTE SHORT/LONG -->
+
+    <h2 class="capitulo" id='PRÓLOGO'>PRÓLOGO</h2>
+    <br>
+
+    <p>
+        <center><b><i>“Before you go, was there something I could´ve
+                    said to make your heartbeat better?”</i></b>
+    </p>
+    <p>Lewis
+        Capaldi, Before You Go</center>
+    </p>
+    <p>&nbsp;</p>
+    <p>— Eu acho
+        que estamos perdidos — <span class="nomes Calum"></span> solta um suspiro leve, desviando a atenção da
+        estrada a sua frente para <span class="nomes Amanda"></span> ao seu lado — Você sabe onde estamos? —
+        Questiona, vendo a menina entortar os lábios para a tela de seu celular, que
+        lhe mostrava um mapa da cidade de Los Angeles.</p>
+    <p>— Eu não
+        tenho ideia — Ela dá de ombros e <span class="nomes Calum"></span> arqueia as sobrancelhas, deixando um
+        riso escapar pelos seus lábios. O <span class="nomes moreno"></span> dirigia com uma mão sobre o volante e
+        a outra pousada sobre suas pernas, enquanto a postura da <span class="nomes morena"></span> era
+        despreocupada e seus calcanhares estavam apoiados sobre o painel do veículo.</p>
+    <p>— Como
+        não, <span class="nomes Mandy"></span>? É você quem está segurando o mapa! — Ele esbraveja brincalhão e
+        <span class="nomes Amanda"></span> suspira, revirando os olhos teatralmente.
+    </p>
+    <p>— Eu te
+        avisei que você não deveria confiar no meu senso de rota — A garota dá de
+        ombros, fazendo o namorado rir. <span class="nomes Mandy"></span>, por conseguinte, relaxa ainda mais sua
+        postura e larga o telefone sobre seu colo, deixando o silêncio tomar conta do
+        ambiente por alguns minutos — Eu acho que nunca vou saber andar nessa cidade,
+        <span class="nomes Calum"></span> — Ela entorta levemente seus lábios, lançando um olhar rápido para o
+        namorado que, mais uma vez, desvia sua atenção para a garota. Um sorriso leve
+        surge no rosto de <span class="nomes Calum"></span> e a sua mão que antes estava sobre suas próprias pernas
+        vai para a coxa de <span class="nomes Amanda"></span>, acariciando levemente a pele descoberta da garota
+        com a ponta de seus dedos calejados.
+    </p>
+    <p>— São
+        momentos como esse que me fazem sentir saudade de casa — O <span class="nomes moreno"></span> expira o ar
+        de seus pulmões, voltando sua atenção para a estrada e <span class="nomes Amanda"></span> franze o cenho.</p>
+    <p>— Que
+        momentos? Aqueles que o <b><i>Waze</i></b> te deixa na mão e a
+        incompetente da sua namorada não consegue se encontrar no <b><i>Google Maps?</i></b> — Ela
+        questiona, fazendo <span class="nomes Hood"></span> revirar os olhos.</p>
+    <p>— Você não
+        é incompetente, <span class="nomes Mandy"></span>. Não diga isso. — Profere, apertando levemente a coxa de
+        <span class="nomes Amanda"></span>. — Momentos em que <b>eu </b>não sei
+        para onde ir — <span class="nomes Hood"></span> dá de ombros e <span class="nomes Mandy"></span> mordisca a
+        ponta de
+        seu indicador,
+        dirigindo seu olhar para a estrada à sua frente.
+    </p>
+    <p>— Eu sinto
+        falta de lá. — Ela se manifesta depois de poucos segundos em silêncio e seu tom
+        de voz aveludado faz o peito do garoto comprimir. <span class="nomes Calum"></span> sabia que <span
+            class="nomes Amanda"></span> só
+        estava em Los Angeles por sua causa e que nada além dele <a>a</a><a href="#_msocom_1">[1]</a>&nbsp; faria
+        deixar Sydney para trás.</p>
+    <p>— Eu
+        também — Confessa, arrancando um riso sereno dos lábios de <span class="nomes Mandy"></span>. A menina, por
+        sua vez, pousa sua mão esquerda sobre a dele e aperta levemente seus dedos.
+        <span class="nomes Hood"></span> observa o gesto com atenção e, então, libera um sorriso terno, antes de
+        respirar fundo e voltar sua atenção para a estrada. — Bom, eu acho melhor a
+        gente ligar para o <span class="nomes Ashton"></span> e...
+    </p>
+    <p>— Meu
+        Deus! É a minha música, <span class="nomes Calum"></span>! – A <span class="nomes morena"></span> esbraveja
+        animada,
+        arrumando sua
+        postura sobre o banco e inclinando seu corpo para frente, afim de aumentar o
+        volume do rádio do carro.</p>
+    <p>Curioso,
+        <span class="nomes Hood"></span> franze o cenho e dirige o seu olhar para o aparelho. De início, o <span
+            class="nomes moreno"></span>
+        não consegue identificar a canção, mas no instante em que as primeiras palavras
+        são cantadas, ele reconhece como sendo <b><i>Fine Line</i></b> de ninguem mais, ninguem
+        menos, que Harry Styles. Um sorriso involuntário surge no rosto do <span class="nomes moreno"></span> no
+        momento em que ele percebe que aquela era, de fato, uma das músicas favoritas
+        de <span class="nomes Amanda"></span> naquele momento.
+    </p>
+    <p>Encantado,
+        ele observa a <span class="nomes morena"></span> entrar na vibe da canção e se surpreende ao vê-la abrir o
+        vidro do carro, no momento em que os dois atravessam a entrada de um dos túneis
+        que cortava a cidade californiana.</p>
+    <p>— O que
+        você está fazendo? — Ele questiona, mas <span class="nomes Mandy"></span> não responde. Ao invés disso, a
+        <span class="nomes morena"></span> dá de ombros e sorri sapeca, antes de se apoiar sobre o banco de couro e
+        ameaçar colocar o corpo para fora pela janela. Assustado, <span class="nomes Hood"></span> arregala os
+        olhos e agarra a barra dos shorts de <span class="nomes Mandy"></span>, tentando trazê-la de volta para si.
+        — Você enlouqueceu? — <span class="nomes Calum"></span> pergunta, olhando atordoado da menina para a
+        imensidão do túnel a sua frente. — Isso é perigoso, <span class="nomes Mandy"></span>! — Profere nervoso e
+        <span class="nomes Amanda"></span> revira os olhos.
+    </p>
+    <p>— A vida é
+        perigosa, <span class="nomes Calum"></span>. E nem assim nós deixamos de viver. — Ela dá de ombros,
+        hipnotizando o garoto que, como se não tivesse controle sobre seus movimentos,
+        solta a peça de roupa e deixa que ela jogue metade de seu corpo para fora do
+        carro.</p>
+    <p>Em
+        silêncio, <span class="nomes Hood"></span> vê <span class="nomes Mandy"></span> apoiar seus quadris sobre a
+        janela
+        do automóvel e, com
+        um equilíbrio inexplicável, a <span class="nomes morena"></span> abre os braços permitindo que a brisa
+        gelada bagunce seus cabelos. Ela deixa a voz de Styles tomar conta do momento e
+        sorri de olhos fechados, balançando levemente seus braços, cantarolando em um
+        tom moderado as palavras que compunham o segundo refrão da canção, como se
+        pudesse sentir cada gota de sentimento que o artista tentou transmitir ali.</p>
+    <p>&nbsp;</p>
+    <p>Nesse
+        momento, por conta de algo humanamente inexplicável, <span class="nomes Calum"></span> tem a certeza de que
+        aquela música marcaria a sua vida em algum sentido. Ele continua assistindo à
+        menina encantado e os dois têm a mesma sensação de que, <b><i>naquele instante, </i></b>ambos
+        são infinitos.</p>
+    <p>No
+        entanto, quando a <span class="nomes morena"></span> joga suas costas para trás e cai, quase sentindo seus
+        dedos tocarem o asfalto, <span class="nomes Hood"></span> se apavora e volta a puxar a barra de seus
+        shorts. Dessa vez, com mais força do que antes.</p>
+    <p>— <span class="nomes Mandy"></span>,
+        chega. Você pode se machucar. — Diz, trazendo a menina de volta para o veículo
+        e <span class="nomes Amanda"></span> sorri, arrumando a sua postura sobre o banco.</p>
+    <p>— Você tem
+        tanto medo assim?</p>
+    <p>— <b>De perder você?</b> — Ele questiona, com as
+        sobrancelhas arqueadas e <span class="nomes Amanda"></span> pressiona um lábio contra o outro — <b>Tenho. </b>—
+        <span class="nomes Calum"></span> dá de ombros, fazendo a
+        menina sorrir.
+    </p>
+    <p>O carro,
+        então, cruza o final do túnel e as luzes de Los Angeles voltam a iluminar o
+        ambiente. <span class="nomes Mandy"></span>, por conseguinte, desata o cinto que mantinha seu corpo preso
+        ao banco e solta um suspiro, antes de proferir o seguinte.</p>
+    <p>— Para o
+        carro, <span class="nomes Calum"></span> — Surpreso, o rapaz lança um olhar confuso para a amada, que
+        apontava para uma espécie de parque, onde algumas pessoas estavam reunidas.</p>
+    <p>— Por quê?
+        Nós já estamos atrasados, <span class="nomes Mandy"></span>.</p>
+    <p>— Eu sei.
+        É por isso que você vai me deixar aqui e vai seguir para a festa. — Ela dá de
+        ombros, guardando seu celular dentro da pequena bolsa dourada. Sem entender,
+        <span class="nomes Hood"></span> franze o cenho.
+    </p>
+    <p>— O quê? Não.
+        Por quê? — A garota ri do semblante desnorteado no rosto do namorado e, por
+        conseguinte, pousa a palma de sua mão sobre a bochecha de <span class="nomes Calum"></span>.</p>
+    <p>— Porque
+        eu tenho que ficar e você <b>precisa </b>seguir
+        em frente. — Ela dá de ombros, com um sorriso singelo nos lábios.</p>
+    <p>— <b><i>Seguir
+                em frente? </i></b>Do que você está falando, <span class="nomes Amanda"></span>? — <span
+            class="nomes Hood"></span> questiona
+        visivelmente estarrecido e a <span class="nomes morena"></span> respira fundo.</p>
+    <p>— Você vai
+        entender em breve, <b><i>meu amor</i></b>. Por enquanto, eu só preciso que você pare o carro,
+        tudo bem? — Ela arqueia levemente suas sobrancelhas e, mais uma vez, como se
+        não tivesse controle sobre as suas próprias atitudes, <span class="nomes Calum"></span> desacelera a
+        velocidade do veículo até que ele para por completo, bem em frente ao local
+        indicado por <span class="nomes Amanda"></span>. </p>
+    <p>A <span class="nomes morena"></span>
+        solta um longo suspiro e lança um sorriso largo na direção do namorado, antes
+        de abrir a porta do carro e saltar para fora dele. Ainda atordoado com o que
+        estava acontecendo, <span class="nomes Hood"></span> estica seu braço e alcança a mão esquerda de <span
+            class="nomes Amanda"></span>,
+        atraindo o olhar da garota ao seu uma última vez.</p>
+    <p>— Eu vou ver
+        você de novo? — Ele questiona, apertando firmemente os dedos da menina.</p>
+    <p>— Sempre
+        que você quiser. — <span class="nomes Amanda"></span> garante, com um sorriso acolhedor em seus lábios e
+        <span class="nomes Calum"></span> respira fundo.
+    </p>
+    <p>— Tudo
+        bem... só mais uma pergunta. — <span class="nomes Hood"></span> morde seus beiços hesitante e, curiosa,
+        <span class="nomes Mandy"></span> franze o cenho. — <b><i>Existe algo que eu poderia ter dito para
+                fazer o seu coração bater melhor?</i></b>
+    </p>
+    <p>troquei por causa da colocação pronominal</p>
+
+    <h2 class="capitulo" id='UM'>UM</h2>
+    <br>
+
+    <p>
+        <center><b>“<i>I know that you
+                    won't get this, but I'll leave a message so I'm not alone</i>”</b>
+    </p>
+    <p>Louis Tomlinson, Two Of Us</center>
+    </p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, maio de 2020.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p>O
+        barulho incessante da campainha invade os ouvidos de <span class="nomes Hood"></span> e, com um pouco de
+        dificuldade, ele abre os olhos pesados pelo sono. </p>
+    <p>Em
+        um movimento corriqueiro, ele passa a mão por toda extensão do lado esquerdo da
+        cama e não nota nenhuma diferença. O edredom cinza
+        continuava perfeitamente estendido sobre aquela área do colchão e <span class="nomes Calum"></span> se
+        impressiona ao notar que nem mesmo
+        involuntariamente e <a>imer</a>so<a href="#_msocom_1">[1]</a>&nbsp;
+        em seu sono, ele conseguia invadir o espaço da cama que costumava ser <b>dela</b>.</p>
+    <p>O
+        <span class="nomes moreno"></span>, então, estende seu braço de encontro à mesa ao lado da cabeceira da
+        cama em busca de seu celular e, assim que encontra, desbloqueia o aparelho para
+        checar a data de o horário. De repente, sua ficha mental cai e <span class="nomes Calum"></span> percebe
+        que — mais uma vez — tudo o que acabou de acontecer não passou de um sonho.
+    </p>
+    <p>A
+        campainha soa mais uma vez e, antes de se levantar, <span class="nomes Hood"></span> respira fundo, lança o
+        celular sobre o colchão e esfrega os olhos com as
+        palmas de suas mãos, usando a força necessária para afastar o cansaço da noite
+        mal dormida. </p>
+    <p>No
+        instante em que atravessa a porta que ligava o quarto do casal ao único
+        corredor do apartamento, <span class="nomes Calum"></span> encontra <span class="nomes Duke"></span> que, por
+        sua
+        vez, saltita animado
+        sobre as duas patas traseiras e late incansavelmente ao reconhecer a figura de
+        seu dono. <span class="nomes Hood"></span>, no entanto, não se abala com a reação do pequeno e passa pelo
+        cachorro como se ele <b>também </b>não
+        estivesse mais ali.</p>
+    <p>O
+        <span class="nomes moreno"></span> caminha até a entrada do apartamento com seus pés descalços batendo
+        contra a madeira gelada do piso e assim que destranca a porta encontra a imagem
+        visivelmente preocupada de um de seus melhores amigos.
+    </p>
+    <p>—
+        Bom dia. — O tom de voz de <span class="nomes Ashton"></span> é sereno e um sorriso leve surge em seu
+        rosto. <span class="nomes Calum"></span>, por sua vez, se mantém em silêncio e dá as costas ao amigo,
+        seguindo em direção a cozinha. — Tudo bem? — Ele
+        questiona, adentrando a residência de
+        <span class="nomes Hood"></span> e fechando a porta atrás de suas costas.
+    </p>
+    <p>De
+        dentro da geladeira, <span class="nomes Calum"></span> retira a última caixa de leite e a apoia sobre a
+        ilha de mármore bem no centro da cozinha. O <span class="nomes moreno"></span>, então, abre uma das portas
+        do armário suspenso no cômodo e seu peito estremece no instante em que seus
+        olhos focalizam a xícara branca com bolas azuis largada no canto do móvel. O batom
+        rosa que comumente marcava aquela porcelana já tinha começado a desaparecer por
+        causa do tempo. </p>
+    <p><span class="nomes Ashton"></span>,
+        por sua vez, para debaixo do pequeno
+        arco que separava a sala de estar da cozinha e observa a cena em silêncio. Ele
+        encosta o braço na parede, esconde suas mãos nos bolsos da bermuda preta que
+        usava e aguarda pacientemente até que <span class="nomes Calum"></span> diga algo. </p>
+    <p><b>Mas ele não diz.</b></p>
+    <p>Ao
+        invés disso, <span class="nomes Hood"></span> balança a cabeça de um lado para o outro e se esforça para
+        ignorar todas as lembranças que aquela peça de porcelana carregava. Em seguida,
+        ele gira seu tronco de frente para o amigo mais uma vez e serve um pouco de
+        leite na caneca preta em suas mãos. O outro, por conseguinte, observa as marcas
+        do cansaço no rosto de <span class="nomes Calum"></span> e solta um suspiro pesado antes de dar alguns passos
+        em direção ao <span class="nomes moreno"></span>.</p>
+    <p>—
+        <span class="nomes Calum"></span>, amanhã faz um mês, irmão. Você... — <span class="nomes Ashton"></span> para
+        de
+        falar, varre o
+        ambiente com os olhos, respira fundo e esfrega a têmpora com a ponta dos dedos
+        ao notar a ausência de limpeza e organização no apartamento do amigo. Com toda
+        certeza do mundo esse lugar não estaria assim <b>se ela ainda estivesse aqui</b>. — Você precisa sair daqui.
+        Você
+        precisa caminhar na
+        rua, ver movimento, respirar ar puro... — Profere com os olhos fixos no
+        porta-retrato quebrado em cima do balcão — <b>você
+            precisa aceitar</b> — Diz, por fim, soltando todo o ar de seus pulmões e
+        relaxando momentaneamente sua postura.
+    </p>
+    <p>—
+        Eu não vou aceitar — <span class="nomes Calum"></span> dá de ombros, sem olhar para o amigo e <span
+            class="nomes Ashton"></span>
+        respira fundo.</p>
+    <p>—
+        <span class="nomes Calum"></span>...
+    </p>
+    <p>—
+        Não diga, <span class="nomes Ashton"></span> — O <span class="nomes moreno"></span> interrompe o outro e fecha
+        os
+        olhos com força, na
+        esperança de que isso fizesse a imagem de <span class="nomes Irwin"></span> desaparecer da sua frente.</p>
+    <p>—
+        Você <b>tem </b>que deixar ela ir. — O
+        outro profere em um tom de voz quase que inaudível e morde seus beiços um tanto
+        quanto inseguro ao ver <span class="nomes Calum"></span> largar a xícara sobre o mármore do balcão e cobrir
+        o rosto com as mãos, implorando mentalmente para que o amigo fosse embora.
+        <span class="nomes Ashton"></span>, por conseguinte, observa a sua reação e apoia as mãos sobre a cintura,
+        balançando a cabeça de um lado para o outro. — Eu não acho que você tem
+        condições de ir amanhã — Dá de ombros, depois de alguns segundos em silêncio.
+        <span class="nomes Hood"></span>, então, levanta o rosto de encontro ao amigo.
+    </p>
+    <p>—
+        Eu <b>vou</b> amanhã — O <span class="nomes moreno"></span> garante,
+        socando levemente a pedra de mármore e <span class="nomes Irwin"></span> respira fundo — Eu <b>preciso </b>ir,
+        <span class="nomes Ashton"></span>, você sabe. <b>Eu preciso fazer isso por ela </b>— <span
+            class="nomes Calum"></span>
+        dá de ombros, com um sorriso entristecido nos lábios e os olhos avermelhados
+        por conta da vontade súbita de chorar. <span class="nomes Irwin"></span>, por sua vez, balança a cabeça na
+        afirmativa entendendo perfeitamente as razões do amigo em dizer aquilo.
+    </p>
+    <p>&nbsp;—
+        Já sabe o que vai dizer? </p>
+    <p>—
+        Eu estou trabalhando nisso — <span class="nomes Calum"></span> rebate sem olhar para <span
+            class="nomes Ashton"></span> e ele libera um suspiro pesado.</p>
+    <p>—
+        Tudo bem. Amanhã eu volto, então. — O outro caminha até <span class="nomes Hood"></span> e afaga seus
+        ombros, em um gesto reconfortante — Eu trouxe almoço para você e ração para o
+        <span class="nomes Duke"></span>.— ele diz apontando para as sacolas no sofá da sala e um agradecimento
+        silencioso escapa pelos lábios de <span class="nomes Calum"></span> no instante em que um sorriso forçado
+        surge em seu rosto — Se você precisar de mais alguma coisa, me liga — <span class="nomes Ashton"></span>
+        aponta para o celular em suas mãos e o <span class="nomes moreno"></span> balança a cabeça na afirmativa,
+        enquanto seus olhos acompanham os movimentos do melhor amigo em direção à saída do seu apartamento.
+    </p>
+    <p>Assim
+        que <span class="nomes Irwin"></span> desaparece do seu campo de visão, <span class="nomes Hood"></span> segue
+        em
+        direção à sala de
+        estar e joga seu corpo sobre o sofá. O <span class="nomes moreno"></span> respira fundo e alcança as folhas
+        de papel e a caneta preta largadas em cima da mesa de
+        centro.</p>
+    <p><span class="nomes Calum"></span>
+        fecha os olhos por um instante, puxa todo o ar que consegue para dentro dos
+        seus pulmões e busca concentração em todos os cantos de sua mente. A única
+        coisa que encontrava, no entanto, era a certeza de que precisava fazer isso.<b> Por ela.</b></p>
+    <p>Segundos
+        depois, ele desperta de seus pensamentos e seus olhos pairam sobre a foto em
+        cima do aparador de vidro. Instantaneamente, <span class="nomes Hood"></span> sente seu peito comprimir ao
+        mínimo e balança a cabeça de um lado para o outro tentando desviar sua atenção
+        da imagem. É nesse instante, então, que seus olhos <span class="nomes castanhos"></span> fitam o telefone
+        fixo ao lado da televisão, em cima do rack de madeira.</p>
+    <p>O
+        <span class="nomes moreno"></span> hesita por alguns instantes, mas logo se levanta do sofá e caminha até o
+        aparelho. Ele saca o telefone em suas mãos e, involuntariamente, ergue seu
+        olhar de encontro a <span class="nomes Duke"></span>. O pequeno
+        animal, sentado há alguns metros, vira o rosto para o lado e <span class="nomes Calum"></span> revira os
+        olhos.
+    </p>
+    <p>—
+        Ah, não me olhe assim! Você também sente falta dela! — Profere, como se o
+        cachorro soubesse exatamente o que o dono estava prestes a fazer. </p>
+    <p>Sem
+        postergar, o <span class="nomes moreno"></span> caminha de volta ao sofá e disca no telefone um número
+        ainda presente em sua memória. Depois de três longos toques, as batidas do
+        coração de <span class="nomes Calum"></span> parecem desacelerar no instante em que ele escuta o sinal
+        sonoro indicando que a ligação estava sendo encaminhada para a caixa de
+        mensagens.</p>
+    <p>— <b><i>Hmm, alô? </i></b>— <span class="nomes Hood"></span>
+        fecha os olhos ao ouvir o tom de voz aveludado da menina e respira fundo,
+        tentando manter o ritmo de sua respiração — <b><i>Você deve saber que ligou para a
+                <span class="nomes Mandy"></span>, mas... eu provavelmente precisei levar o <span
+                    class="nomes Duke"></span>
+                para fazer suas
+                necessidades, então... </i></b>— O <span class="nomes moreno"></span> abre os olhos e solta um riso,
+        encarando a figura curiosa do animal parado ao lado dos seus pés — <b><i>isso
+                significa que eu não posso te atender agora. Deixa um recado e eu retorno assim
+                que possível, beijo! </i></b></p>
+    <p>Assim
+        que a voz da garota desaparece, <span class="nomes Calum"></span> encerra a ligação e larga o aparelho
+        sobre a mesa de centro da sala. Ele joga suas costas contra o sofá e embaraça
+        os fios de seus cabelos entre seus dedos, enquanto encara fixamente o lustre no
+        teto.</p>
+    <p>Há
+        alguns dias essa cena se repete. <span class="nomes Hood"></span> discava o número do telefone de <span
+            class="nomes Amanda"></span>,
+        umas duas ou três vezes por dia, só para conseguir ouvir a voz dela através da
+        mensagem na secretária eletrônica. Às vezes, o <span class="nomes moreno"></span> até deixava um recado
+        mesmo com a certeza de que ela nunca ouviria. De um jeito estranho, quando
+        fazia isso, <span class="nomes Calum"></span> não se sentia tão sozinho. </p>
+    <p>—
+        Se você estivesse aqui, eu já teria terminado isso — ele solta um longo
+        suspiro, ainda com os olhos cravados no teto e desperta de seus pensamentos
+        quando sente <span class="nomes Duke"></span> pular entre as suas pernas.</p>
+    <p>Absorto,
+        <span class="nomes Hood"></span> ergue sua postura no sofá e solta um sorriso leve ao ver o animal
+        choramingar e implorar pelo seu colo.
+    </p>
+    <p>—
+        Eu não tenho sido um bom pai, não é? — Ele arqueia as sobrancelhas, inclinando
+        o seu corpo para frente para receber o cachorro em seus braços. <span class="nomes Duke"></span>, então,
+        lambe uma das mãos de <span class="nomes Calum"></span> e — de uma maneira desengonçada — enfia sua cabeça
+        embaixo dela em busca de carinho O <span class="nomes moreno"></span> ri. — <b>Até nisso ela era melhor do que
+            eu
+        </b>— Profere, afagando a cabeça do
+        animal que se aconchega ainda mais em seu colo, enquanto <span class="nomes Hood"></span> sente sua
+        garganta fechar e a vontade de chorar surge mais uma vez.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, setembro de 2016.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p>—
+        <span class="nomes Luke"></span> está perguntando se temos planos para mais tarde. — <span
+            class="nomes Calum"></span> profere,
+        desviando sua atenção do celular para <span class="nomes Mandy"></span>. Com seus dedos entrelaçados aos da
+        menina, o <span class="nomes moreno"></span> a observa dar de ombros, enquanto degusta um pouco do sorvete
+        de amêndoas nas suas mãos.
+    </p>
+    <p>—
+        Não sei. Temos? — <span class="nomes Amanda"></span> questiona, sem olhar para o namorado e <span
+            class="nomes Hood"></span> respira
+        fundo, voltando sua atenção para o caminho a sua frente.</p>
+    <p>Era
+        sábado e, consequentemente, o penúltimo dia de <span class="nomes Mandy"></span> em Los Angeles antes de
+        voltar para Sydney. Como esperado, um dos pontos mais atrativos da cidade dos
+        anjos estava abarrotado de pessoas vindas de todos os cantos do planeta e — vez
+        ou outra — o passeio do casal era interrompido por um fã da 5 Seconds Of Summer
+        na esperança de conseguir uma foto com <span class="nomes Calum"></span>, mas <span class="nomes Amanda"></span>
+        não
+        se importava.</p>
+    <p>Se
+        esse era o preço necessário para conseguir aproveitar um tempo junto de seu
+        namorado, ela pagaria sem pensar duas vezes.</p>
+    <p>—
+        Steve está planejando uma festa na cobertura do estúdio e nós fomos convidados.
+        — O <span class="nomes moreno"></span> dá de ombros e <span class="nomes Mandy"></span> suspira, com os olhos
+        fixos
+        no doce em suas
+        mãos.</p>
+    <p>—
+        Eu... não sei. — Ela rebate com certa indiferença e, instintivamente, <span class="nomes Calum"></span>
+        para de andar. Por conseguinte, <span class="nomes Amanda"></span> também interrompe seus passos e lança um
+        olhar confuso para o amado.</p>
+    <p>—
+        Qual o problema, <span class="nomes Mandy"></span>? </p>
+    <p>—
+        Como assim? — Sem entender, a <span class="nomes morena"></span> franze o cenho.</p>
+    <p>—
+        Todas as vezes que fomos convidados para uma festa como essa, você agiu assim.
+        Por quê?</p>
+    <p>—
+        Assim, como? </p>
+    <p>—
+        <span class="nomes Mandy"></span>... — <span class="nomes Calum"></span> a repreende com um olhar entediado no
+        rosto
+        e a menina respira
+        fundo, desviando — momentaneamente— sua atenção para qualquer coisa que não
+        fosse o semblante curioso do namorado.
+    </p>
+    <p>—
+        Porque eu não tenho nada em comum com <b>essas
+            pessoas</b>, <span class="nomes Calum"></span> — Ela dá de ombros, soltando um suspiro longo e devolvendo
+        seu olhar para o amado. Sem entender, <span class="nomes Hood"></span> franze o cenho. — Eu tenho certeza
+        de que a namorada do <span class="nomes Luke"></span> me odeia e esse Steve me acha uma pedra no sapato. Um
+        obstáculo que o impede de apresentar todas aquelas garotas gostosas e
+        siliconadas para o amigo dele. O grande <span class="nomes Calum"></span> <span class="nomes Hood"></span>,
+        <span class="nomes baixista"></span> da 5SOS. —
+        Surpreso, <span class="nomes Hood"></span> arqueia as sobrancelhas, mas o semblante frustrado no rosto de
+        <span class="nomes Mandy"></span> faz com que ele queira rir.
+    </p>
+    <p>—
+        Do que você tá falando? — Ele questiona, tentando segurar a risada e a menina
+        revira os olhos impaciente.</p>
+    <p>—
+        Você sabe do que eu estou falando, <span class="nomes Calum"></span>. Eu vi como aquela Paige te olha, eu não
+        sou idiota. — A <span class="nomes morena"></span> dá de ombros e <span class="nomes Hood"></span> pressiona um
+        lábio contra o outro.</p>
+    <p>—
+        Você está com ciúmes? — O <span class="nomes moreno"></span> pergunta, cerrando os seus olhos.</p>
+    <p>—
+        E você não estaria se soubesse que o seu namorado da escola agora é um <b><i>rockstar
+            </i></b>e a realidade dele está cada vez mais distante da sua? — A <span class="nomes morena"></span>
+        arqueia as suas sobrancelhas, envolvendo seu braço livre sobre sua própria
+        cintura. <span class="nomes Calum"></span>, por sua vez, solta um riso leve e joga a cabeça para trás como
+        uma criança brincalhona antes de voltar sua atenção
+        para a amada e puxar seu braço, diminuindo ainda mais a distância entre seus
+        corpos.</p>
+    <p>—
+        Você não tem com o que se preocupar — Ele garante, escondendo sua mão esquerda
+        dentro da jaqueta jeans que ela usava e cravando seus dedos na curvatura da
+        cintura da garota. Insegura, <span class="nomes Mandy"></span> morde os beiços.</p>
+    <p>—
+        <b>Elas </b>são muito mais interessantes do
+        que eu, <span class="nomes Calum"></span>. <b>Um dia </b>você vai
+        perceber isso. — Profere, com um tom de voz mais baixo do que o normal, se
+        distraindo com os poucos pelinhos de poeira grudados no tecido azul marinho da
+        blusa que <span class="nomes Hood"></span> usava na ocasião.
+    </p>
+    <p>—
+        Não vou. — Assegura, pressionando ainda mais o corpo de <span class="nomes Mandy"></span> contra o seu.
+        Hesitante, a <span class="nomes morena"></span> suspira, balançando sua cabeça de um lado para o outro e
+        <span class="nomes Calum"></span> percebe. — <span class="nomes Amanda"></span>, olha para mim — Pede, mas a
+        <span class="nomes morena"></span> não o faz.
+        Instintivamente, a mão de <span class="nomes Hood"></span> sobe de encontro ao rosto da garota e força seu
+        queixo para cima, trazendo os olhos <span class="nomes negros"></span> dela de encontro aos dele. — Eu amo
+        você. Amei na época da escola, amo hoje e ainda pretendo amar por muitos anos. <b>Ninguém </b>nessa cidade vai
+        conseguir
+        tomar o seu lugar.
+    </p>
+    <p>Absorta
+        com a declaração inesperada, <span class="nomes Amanda"></span> se perde na imensidão dos olhos <span
+            class="nomes castanhos"></span>
+        do rapaz e acaba levando algum tempo para processar suas palavras. Segundos
+        depois, ela balança a cabeça de um lado para o outro e umedece a garganta,
+        antes de franzir o cenho e questioná-lo:</p>
+    <p>—
+        <b>Você promete?</b> — Ela mordisca seu
+        lábio inferior e um riso gracioso salta pela boca de <span class="nomes Hood"></span>, enquanto ele usa o
+        polegar para acariciar a pele aveludada da bochecha da garota.
+    </p>
+    <p>—
+        É claro que...</p>
+    <p>—
+        Ei, aquele não é o <span class="nomes Calum"></span>? — Antes que o garoto consiga terminar sua frase, o
+        casal é interrompido por um tom de voz feminino e um tanto quanto agudo. Imediatamente
+        os dois se lembram que estão em público e, enquanto <span class="nomes Hood"></span> bufa — visivelmente
+        irritado pela falta de privacidade —, <span class="nomes Mandy"></span> deixa um riso escapar pelos seus
+        lábios.</p>
+    <p>—
+        É sim! <span class="nomes Calum"></span>, você pode tirar uma foto com a gente? — Uma outra voz
+        desconhecida questiona e o garoto respira fundo, desviando sua atenção em
+        direção ao som.</p>
+    <p>—
+        Não é um bom momento, meninas — Ele dá de ombros e <span class="nomes Amanda"></span> assiste a mudança
+        repentina nos semblantes das garotas. A felicidade de se encontrar com um de
+        seus artistas favoritos logo dá lugar ao desaponto de ter uma foto negada por
+        ele.</p>
+    <p>—
+        Tudo bem, vai lá — Ela profere, afagando as costas do namorado que, sem
+        entender, lhe lança um olhar confuso. A <span class="nomes morena"></span>, por conseguinte, sorri e indica
+        as meninas com a cabeça. O <span class="nomes moreno"></span>, então, respira fundo e ciente de que era a
+        minoria ali, volta o seu olhar de encontro às fãs.</p>
+    <p>—
+        Certo, claro. Uma foto, por que não? — <span class="nomes Hood"></span> entorta seus lábios em um sorriso
+        forçado — notavelmente indiferente à situação e <span class="nomes Amanda"></span> vê os semblantes
+        animados retornarem aos rostos das garotas.</p>
+    <p>Enquanto
+        <span class="nomes Calum"></span> atende as fãs, a <span class="nomes morena"></span> decide se afastar e dar
+        certa
+        privacidade para
+        que, de um jeito ou de outro, aquela seja uma das melhores experiências das
+        meninas. Há alguns metros, ela encontra uma lixeira onde consegue descartar
+        todo o lixo que segurava em suas mãos — descartáveis e resíduos do sorvete que
+        tomava a pouco — e, então, um barulho específico chama a sua atenção.
+    </p>
+    <p>O
+        som agudo do latido de um cachorro faz com que <span class="nomes Mandy"></span> vire seu corpo para o lado
+        oposto ao que estava e, a altura de seus joelhos, encontra um cercado de metal
+        que mantinha um pequeno e alvoroçado animal preso. </p>
+    <p>—
+        Ei, carinha. — Um sorriso gracioso surge nos lábios da garota e ela se apoia
+        sobre os joelhos, ficando a uma altura confortável em relação ao animal. — Como
+        você se chama? — <span class="nomes Amanda"></span> questiona, afagando os pelos do cachorro. O pingente
+        prateado preso à coleira do animal atrai a curiosidade da <span class="nomes morena"></span> que gira a medalha
+        entre seus dedos.</p>
+    <p><span class="nomes Mandy"></span>
+        não encontra um nome ali e sim o dizer <b><i>Me Adote </i></b>seguido de um número
+        comercial. Isso, involuntariamente, faz sem peito comprimir e um sorriso
+        entristecido brota em seus lábios no instante em que ela sente o cãozinho
+        lamber a palma de suas mãos. </p>
+    <p>—
+        Olha só, você deve ser a única pessoa no mundo que ele não tentou morder.
+        Parece que ele te escolheu. — Uma voz feminina chama a atenção de <span class="nomes Mandy"></span> e,
+        involuntariamente, ela ergue o rosto em direção ao som, encontrando uma mulher
+        de trinta e poucos anos, vestindo uma blusa vermelha e um sorriso largo no
+        rosto. Imediatamente, <span class="nomes Amanda"></span> se levanta do chão e balança a cabeça na negativa.</p>
+    <p>—
+        Ah não, eu não posso. Eu não moro em Los Angeles, só estou passando uns dias
+        com o meu namorado. — Ela dá de ombros, limpando as mãos suadas sobre o tecido
+        de sua calça.</p>
+    <p>—
+        Uma pena, pensei que essa poderia ser a chance do <span class="nomes Duke"></span>. — A mulher suspira e a
+        felicidade em seu sorriso desaparece de uma hora para a outra — Ele deve ser
+        sacrificado ainda essa semana. — Ela dá de ombros e, surpresa, <span class="nomes Amanda"></span> arregala
+        os olhos.</p>
+    <p>—
+        Espera, o quê? Você está falando sério? — Questiona, desviando o olhar para o
+        animalzinho inocente sentado à frente de seus pés e a mulher balança a cabeça
+        na afirmativa.</p>
+    <p>—
+        Apesar do tamanho, <span class="nomes Duke"></span> já é um cachorro velho e, bom... ele não é a
+        preferência da maioria das famílias que se interessa pela adoção. — <span class="nomes Mandy"></span>
+        franze o cenho, sentindo o peso das palavras ditas pela mulher caírem sobre o
+        seu peito. O animal, no entanto, olha para <span class="nomes Amanda"></span> com um brilho nos olhos, como
+        se implorasse para que ela o tirasse daquele lugar — Tentamos mandá-lo para
+        abrigos que não fossem sacrifica-lo, mas estão todos lotados. <span class="nomes Duke"></span> está
+        ocupando o lugar que seria de outro animal. — Um sorriso torto surge nos lábios
+        da mulher e <span class="nomes Mandy"></span> balança a cabeça de um lado para o outro.</p>
+    <p>—
+        Mas vocês não podem...</p>
+    <p>—
+        Resgate é como um rio, minha querida. — A outra interrompe e, imediatamente,
+        <span class="nomes Amanda"></span> se cala — Para não transbordar, ele precisa fluir. — Profere, com certa
+        indiferença e a <span class="nomes morena"></span> respira fundo.
+    </p>
+    <p>—
+        Algum problema? — A voz inconfundível de <span class="nomes Calum"></span> chama a atenção de <span
+            class="nomes Mandy"></span> e,
+        imediatamente, a <span class="nomes morena"></span> desvia seu olhar em direção para o namorado. De
+        repente, uma possibilidade um tanto quanto absurda cruza os pensamentos de
+        <span class="nomes Amanda"></span> e ela arregala os olhos, olhando de <span class="nomes Calum"></span> para o
+        pequeno cachorro
+        algumas vezes. Confuso, o <span class="nomes moreno"></span> franze o cenho.
+    </p>
+    <p>—
+        Você precisa adotar ele, <span class="nomes Calum"></span>. — Profere, simplesmente. Sem entender, <span
+            class="nomes Hood"></span>
+        esboça um sorriso enleado nos olhos, enquanto a terceira pessoa assiste à cena
+        em silêncio.</p>
+    <p>—
+        O que disse? — Ele questiona e a <span class="nomes morena"></span> umedece a garganta, dando alguns passos
+        em direção ao rapaz.</p>
+    <p>—
+        Você precisa adotar esse cachorro. — Diz, apontando para o cachorro, levando a
+        atenção de <span class="nomes Hood"></span> de encontro ao animal.</p>
+    <p>—
+        <span class="nomes Mandy"></span>, eu não... — Incerto, <span class="nomes Calum"></span> balança a cabeça de um
+        lado para o outro e,
+        então, volta sua atenção para a namorada — eu não posso.
+    </p>
+    <p>—
+        Se você não fizer isso, ele vai ser sacrificado e aí <b>eu </b>e <b>você </b>vamos carregar
+        essa culpa. — Ela diz, notavelmente nervosa e o <span class="nomes moreno"></span> revira os olhos, um
+        tanto quanto impaciente.</p>
+    <p>—
+        <span class="nomes Amanda"></span>... — A <span class="nomes morena"></span> dá mais alguns passos à frente e
+        agarra
+        o tecido da blusa
+        do garoto com seus dedos. Pressiona um lábio contra o outro e, então, ameniza o
+        tom de sua voz ao proferir o seguinte:
+    </p>
+    <p>—
+        Por favor, <span class="nomes Calum"></span>. Por mim. — O peito do garoto estremece e, por mais que tente,
+        sabe que essa é uma batalha perdida. <span class="nomes Amanda"></span> jamais deixaria Santa Mônica sem ter
+        aquele
+        animal seguro em seus braços.</p>
+    <p>—
+        Tudo bem, eu posso... posso dar um jeito. — Ele dá de ombros, esfregando a
+        têmpora com a ponta dos dedos e a garota saltita animada, lançando um sorriso
+        para a mulher responsável pela adoção. </p>
+    <p>Nesse
+        instante, um sorriso involuntário surge nos lábios de <span class="nomes Calum"></span> e ele sente um
+        incômodo prazeroso no pé de seu estômago. No entanto, isso é, imediatamente,
+        deixado de lado no momento em que ele se lembra de que,
+        em alguns dias, a alegria contagiante de sua namorada não será presente no seu
+        dia a dia. Por conta disso, uma outra possibilidade absurda acaba cruzando os
+        pensamentos do rapaz e ele se aproxima de <span class="nomes Amanda"></span>, atraindo a atenção da garota
+        para si.</p>
+    <p> — Mas com uma condição... — Profere, olhando
+        da namorada para o pequeno animal e, sem entender, <span class="nomes Mandy"></span> franze o cenho — <b>Você se
+            muda de uma vez para Los Angeles. </b>—
+        Diz, pousando seus olhos sobre a namorada que, atônita, arqueia as sobrancelhas
+        e afasta um lábio do outro.</p>
+    <p>—
+        O que... o que você disse?</p>
+    <p>—
+        Vem morar em Los Angeles, <span class="nomes Mandy"></span>. Você pode ficar lá em casa e então cuidaremos
+        desse carinha juntos. — <span class="nomes Calum"></span> dá de ombros, lançando um sorriso gracioso para o
+        animal. <span class="nomes Amanda"></span>, por conseguinte, gargalha. </p>
+    <p>Sem
+        entender, <span class="nomes Calum"></span> estreita seus olhos e passeia entre <span
+            class="nomes Mandy"></span>, o
+        animal e a mulher
+        que aguarda, pacientemente, pela decisão do jovem casal. Quando percebe que é a
+        única, entre os três, rindo, <span class="nomes Amanda"></span> arregala os olhos e para sobre o namorado.</p>
+    <p>—
+        Isso não foi uma piada? — Ela questiona, visivelmente apavorada e <span class="nomes Hood"></span> balança
+        a cabeça de um lado para o outro — Você ficou louco? Eu não posso simplesmente
+        sair de Sydney, <span class="nomes Calum"></span>! Eu tenho um emprego, a minha família e... <b></b></p>
+    <p>—
+        Eu posso falar com a sua família. — <span class="nomes Calum"></span> a interrompe, tocando levemente seus
+        braços e, imediatamente, <span class="nomes Mandy"></span> se cala — Nós dois sabemos o quanto dói neles te
+        ver sofrer por causa dessa distância, <span class="nomes Amanda"></span>. — Um sorriso leve surge em seus
+        lábios e a ponta de seus dedos acariciam a pele aveludada no rosto da garota,
+        fazendo-a estremecer — E, quanto ao seu emprego... você pode trabalhar com a
+        gente. Não somos tão comportados quanto as modelos que você fotografa para a
+        agência, mas acho que seríamos ótimos clientes. — Ele dá de ombros, com um
+        sorriso brincalhão nos lábios e <span class="nomes Mandy"></span> revira os olhos, deixando um riso breve
+        escapar — Por favor, <span class="nomes Mandy"></span>, eu preciso de alguém que me traga de volta para a
+        casa todas as vezes que os demônios dessa cidade falarem mais alto e <b>você </b>é esse alguém, <b>meu amor.
+        </b>— O
+        tom de voz de <span class="nomes Hood"></span> é mais
+        sério que o normal e <span class="nomes Amanda"></span> sente seu peito comprimir. Ela, então, morde os
+        beiços e solta um longo suspiro, enquanto o outro observa atentamente a sua
+        reação.</p>
+    <p>—
+        <span class="nomes Calum"></span>, e-eu...
+    </p>
+    <p>—
+        Com licença, moça, eu tenho que terminar de arrumar essa bagunça. — A garota é
+        interrompida pela outra mulher e, involuntariamente, desvia a sua atenção em
+        direção ao som — Nós precisamos ir. — Ela dá de ombros, lançando um sorriso
+        fraco para <span class="nomes Duke"></span>. Assustada, <span class="nomes Amanda"></span> arregala os olhos e
+        se
+        afasta de <span class="nomes Calum"></span>,
+        caminhando até o animal.</p>
+    <p>—
+        Não, espera! Nós vamos adotar ele. — Diz nervosa, apontando para o cachorro.
+        Animada, a mulher sorri e lança um olhar rápido para <span class="nomes Calum"></span> que, por sua vez,
+        arqueia as sobrancelhas.</p>
+    <p>—
+        Isso é um sim? — Ele questiona, aproximando-se de <span class="nomes Mandy"></span> e a menina respira
+        fundo.</p>
+    <p>—
+        Por favor, não me mande embora na primeira briga. — Pede, mordendo seus beiços
+        com certa força e o <span class="nomes moreno"></span> deixa uma gargalhada serena saltar pelos seus
+        lábios.</p>
+    <p>—
+        Vai ser um pouco difícil. Nós dois somos teimosos, você sabe. — Ele dá de
+        ombros, um tanto quanto brincalhão, mas o semblante inseguro não desaparece do
+        rosto de <span class="nomes Amanda"></span>. O garoto, então, erradica a distância entre o seu corpo e o da
+        namorada e, com o indicador, puxa o queixo da menina, forçando o olhar dela a
+        ir de encontro ao seu — Isso não vai acontecer, <b>eu prometo. </b>— Garante, antes de selar os lábios de <span
+            class="nomes Mandy"></span> em um
+        beijo rápido e adocicado.</p>
+    <p>—
+        Parabéns, <span class="nomes Duke"></span>! Você encontrou uma família. — A mulher profere, atraindo a
+        atenção do casal que sorri ao vê-la estender o pequeno na sua direção. <span class="nomes Amanda"></span>
+        envolve <span class="nomes Duke"></span> em seus braços e ele lambe a sua bochecha, como se tentasse
+        agradecer à menina por — de um jeito ou de outro — ter salvado a sua vida.</p>
+    <p>—
+        Eu acho que isso significa que agora somos pais. — <span class="nomes Calum"></span> ri, afagando os pelos
+        do animal e <span class="nomes Amanda"></span> respira fundo, antes de erguer seus olhos na direção do
+        amado.</p>
+    <p>—
+        É. Eu acho que sim.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, maio de 2020.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p><b>— </b>Eu errei com ela,
+        não foi? — <span class="nomes Calum"></span> questiona, enquanto seus olhos voltam a fitar a imagem sobre o
+        aparador. Dessa vez o rapaz não hesita e, enquanto envolve <span class="nomes Duke"></span> com um de seus
+        braços, estica o outro em direção ao porta-retrato, tomando-o em suas mãos.</p>
+    <p><span class="nomes Ashton"></span>
+        tinha tirado aquela foto na noite em que <span class="nomes Calum"></span> completou vinte e quatro anos.
+        <span class="nomes Amanda"></span> estava linda, vestia uma blusa preta com estampa do <b>Led Zeppelin </b>por
+        dentro de uma saia branca, coturno preto nos pés e
+        os cabelos presos em um rabo de cavalo bem no topo de sua cabeça. Aquela blusa
+        era uma das favoritas do rapaz e usá-la durante a comemoração de aniversário
+        dele foi uma escolha estritamente proposital.
+    </p>
+    <p>Na
+        imagem em questão, <span class="nomes Hood"></span> estava sentado sobre o parapeito da varanda do
+        apartamento de <span class="nomes Michael"></span> e <span class="nomes Amanda"></span> entre suas pernas. O
+        <span class="nomes moreno"></span> envolvia os ombros
+        da garota com seus braços e os dois se olhavam, enquanto <span class="nomes Mandy"></span> sorria e
+        mostrava a língua para o namorado, com um semblante engraçado em seu rosto.
+    </p>
+    <p>Aos
+        olhos de um estranho qualquer, os dois podiam parecer o casal mais feliz do
+        mundo. No entanto, a realidade entre <span class="nomes Calum"></span> e <span class="nomes Amanda"></span>
+        estava
+        longe de ser essa.</p>
+    <p>Gradualmente,
+        <span class="nomes Hood"></span> acabou se afastando da namorada e deixando o seu relacionamento de lado. A
+        fama recorrente do sucesso da banda acabou transformando <span class="nomes Calum"></span> em uma pessoa
+        totalmente diferente do que ele costumava ser e — principalmente — diferente
+        daquela pessoa que <span class="nomes Mandy"></span> conhecia.
+    </p>
+    <p>No
+        entanto, <b>isso </b>não era suficiente
+        para que ela deixasse de amá-lo.</p>
+    <p>A
+        única coisa que eles não sabiam, é que aquele aniversário seria o último que comemorariam juntos.</p>
+    <p>—
+        Se eu pudesse voltar no tempo, eu não teria feito você se mudar para essa
+        cidade — profere, passando o polegar pelo rosto da menina na foto, ao mesmo
+        tempo em que sente seu rosto umedecer pelas gotículas que começavam a saltar de
+        seus olhos.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, abril de 2020</b></p>
+    <p><b>&nbsp;</b></p>
+    <p>Às
+        onze e dezessete em ponto, <span class="nomes Hood"></span> adentra o apartamento onde mora, cambaleando e
+        tropeçando sobre seus próprios pés. O <span class="nomes moreno"></span> se esforça ao máximo para manter o
+        seu equilíbrio e não provocar nenhum tipo de barulho que fosse capaz de acordar
+        ou até mesmo atrair a atenção de <span class="nomes Amanda"></span>.</p>
+    <p>Com
+        toda suavidade que lhe foi concedida, <span class="nomes Calum"></span>
+        caminha pela escuridão que escondia a sua sala de estar e tateia — cegamente —
+        a parede em busca do interruptor para acender as luzes.</p>
+    <p>No
+        instante em que a claridade artificial das lâmpadas ilumina o ambiente, <span class="nomes Hood"></span> dá
+        um leve salto para trás, visivelmente assustado por encontrar a figura da
+        namorada cem por cento acordada, sentada com as pernas
+        encolhidas sobre o grande sofá cinza da sala.</p>
+    <p><span class="nomes Amanda"></span>
+        não estava arrumada. Seu rosto estava inchado e um resquício de maquiagem
+        escorria dos seus olhos por toda extensão de suas bochechas. Seus cabelos
+        estavam emaranhados e presos ao topo de sua cabeça em um coque nada perfeito e
+        ela vestia um moletom cinza da <b>Santa Cruz </b>— peça exclusiva do guarda
+        roupa do namorado —, uma calça legging preta e, nos pés, uma meia de veludo
+        rosa. </p>
+    <p>A
+        <span class="nomes morena"></span> não esboça nenhum tipo de reação e <span class="nomes Calum"></span> respira
+        fundo, preparando-se
+        para a discussão que estava prestes a acontecer.
+    </p>
+    <p>—
+        Pensei que você estivesse dormindo — Ele profere, largando as coisas que
+        estavam em seu bolso sobre o balcão da cozinha.</p>
+    <p>—
+        Você disse que almoçaríamos juntos hoje — <span class="nomes Mandy"></span> rebate, evitando contato visual
+        com o amado. <span class="nomes Calum"></span>, por sua vez, sente as palavras da garota pesarem sobre as
+        suas costas no momento em que percebe que tinha esquecido completamente do
+        compromisso — Onde você esteve, <span class="nomes Calum"></span>? — A <span class="nomes morena"></span> se
+        interessa em saber e <span class="nomes Hood"></span>
+        respira fundo mais uma vez, em busca de uma desculpa plausível que tivesse o
+        poder de erradicar aquela briga, antes mesmo que ela pudesse começar — E, por
+        favor, não me diga que estava no estúdio. — <span class="nomes Amanda"></span> implora, pressionando as
+        suas pálpebras, fazendo com que algumas lágrimas descessem pelo seu rosto — <span class="nomes Ashton"></span>
+        esteve aqui há algumas horas. Ele
+        queria saber de você já que, pelo que parece, você é bom demais para comparecer
+        ao ensaio da sua própria banda — A <span class="nomes morena"></span> range os dentes, abre os olhos e vira
+        o seu rosto em direção ao namorado. <span class="nomes Hood"></span>, por sua vez, umedece a garganta e se
+        mantém em silêncio, a medida em que seus olhos acompanham os movimentos de
+        <span class="nomes Amanda"></span> que se levanta do sofá e caminha até ele. &nbsp;— <b>Onde
+            você esteve</b>? — Ela insiste, cerrando os punhos e <span class="nomes Calum"></span> fecha os olhos,
+        ouvindo a sua cabeça gritar de dor.
+    </p>
+    <p><b><i>Maldita
+                tequila.</i></b></p>
+    <p>—
+        Eu estava com uns amigos — Ele dá de ombros, passando por <span class="nomes Amanda"></span> e seguindo em
+        direção a cozinha.</p>
+    <p>—
+        Que amigos, <span class="nomes Calum"></span>? — A <span class="nomes morena"></span> questiona, cerrando os
+        olhos —
+        Seus amigos são <span class="nomes Luke"></span>, <span class="nomes Michael"></span> e <span
+            class="nomes Ashton"></span> e eu
+        sei que com eles você não estava — Profere, cruzando os braços na frente do
+        próprio corpo e aguarda a resposta de <span class="nomes Hood"></span>. No entanto, surpreende-se ao ver um
+        riso debochado escorrer pelos lábios do namorado.</p>
+    <p>—
+        Não, <span class="nomes Amanda"></span>. Esses são <b>os seus amigos</b>
+        — O <span class="nomes moreno"></span> dá de ombros, tomando um gole de água e a garota arqueia as
+        sobrancelhas — O meu ciclo de amizade não se restringe a esses três — Acrescenta com a voz carregada de
+        indiferença. </p>
+    <p>—
+        <b>Com quem você estava, <span class="nomes Calum"></span>?</b> —
+        Novamente a <span class="nomes morena"></span> insiste na pergunta e, dessa
+        vez, <span class="nomes Hood"></span> revira os olhos impaciente.
+    </p>
+    <p>—
+        Eu não estou entendendo esse interrogatório, <span class="nomes Mandy"></span>. Até onde me lembro, você
+        não é a minha mãe. </p>
+    <p>—
+        E você se lembra quem eu sou, <span class="nomes Calum"></span>? — Ela questiona, mordendo os lábios e <span
+            class="nomes Hood"></span>
+        respira fundo quando a vê atravessar a ilha de mármore e ficar com o corpo
+        rente ao dele — Eu sou <b>a porra </b>da
+        sua namorada. — &nbsp;A <span class="nomes morena"></span> bate o pé com
+        força no chão e <span class="nomes Hood"></span> fecha os olhos, sentindo uma pontada aguda perfurar seu
+        crânio. </p>
+    <p>Um
+        silêncio toma conta do ambiente e <span class="nomes Amanda"></span> aproveita a oportunidade para estudar
+        os detalhes em <span class="nomes Calum"></span>. O cheiro adocicado de seu perfume tinha dado lugar ao
+        aroma amargo do álcool. Suas roupas estavam notavelmente amarrotadas e seus
+        cabelos emaranhados. Sua postura curvada e as pálpebras pesadas indicavam uma
+        exaustão causada pela embriaguez.</p>
+    <p>A
+        <span class="nomes morena"></span>, então, suspira e deixa um sorriso entristecido saltar pelos seus lábios
+        antes de questionar:
+    </p>
+    <p>—
+        Você estava com a Paige? — Ela arqueia o olhar para <span class="nomes Hood"></span> que, por sua vez,
+        desvia a atenção de <span class="nomes Amanda"></span> e se mantém em silêncio. Convicta de que receberia
+        uma resposta positiva para aquela pergunta, <span class="nomes Mandy"></span> fecha seus olhos, deixa mais
+        algumas lágrimas escorrerem e, então, puxa todo ar que consegue de volta para
+        os seus pulmões — Por favor, <span class="nomes Calum"></span>. Se você ainda tem uma gota de respeito e
+        consideração, me responde: você estava com ela? — Insiste, arregalando seus
+        olhos para o namorado mais uma vez.</p>
+    <p>—
+        Eu acho que você sabe a resposta dessa pergunta, <span class="nomes Mandy"></span>. — Ele dá de ombros,
+        lançando um olhar rápido para a namorada e, antes mesmo que tivesse tempo para
+        impedi-la, sente sua bochecha arder pelo tapa que a menina tinha lançado contra
+        a sua pele.</p>
+    <p>—
+        Como você teve coragem de fazer isso <b>comigo?</b>
+        — A <span class="nomes morena"></span> questiona, visivelmente desnorteada, mas <span class="nomes Hood"></span>
+        não
+        a olha. A mão do
+        garoto tentava aliviar o ardor do tapa em sua pele e ele ainda tentava
+        processar o que tinha acabado de acontecer. — Eu fiz <b>tudo </b>o que você me pediu, <span
+            class="nomes Calum"></span>. Eu me mudei para Los Angeles,
+        deixei <b>a minha casa</b>, deixei o meu
+        emprego, deixei <b>a minha família </b>e o
+        que foi que você fez? — <span class="nomes Mandy"></span> pergunta e <span class="nomes Calum"></span> respira
+        fundo, esfregando a
+        têmpora com a ponta de seus dedos. Os gritos da namorada o davam certeza de
+        que, a qualquer momento, sua cabeça viria a explodir — Você fez a <b>única </b>merda de coisa que eu te pedi
+        para não fazer.</p>
+    <p>—
+        Por Deus, <span class="nomes Amanda"></span>. Falando assim até parece que eu te amarrei e te trouxe a
+        força. — O <span class="nomes moreno"></span> solta um riso frouxo, enquanto <span class="nomes Mandy"></span>
+        puxa
+        o choro pelo nariz
+        e seca as lágrimas que escorriam pelo seu rosto — Você fez tudo isso porque
+        quis. — <span class="nomes Calum"></span> dá de ombros, visivelmente indiferente ao que estava acontecendo.
+        Dessa vez, é <span class="nomes Amanda"></span> quem ri com deboche.</p>
+    <p>—
+        Eu fiz tudo isso porque esse é o controle que <b>você</b> tem sobre mim, <span class="nomes Calum"></span>. Eu
+        <b>sabia
+        </b>que não daria certo e <b>mesmo assim </b>deixei
+        tudo para trás. — Ela dá de ombros, com um sorriso nervoso no rosto.
+    </p>
+    <p>—
+        Controle que eu tenho sobre você? — O <span class="nomes moreno"></span> questiona, franzindo o cenho. —
+        Tente viver debaixo do mesmo teto que uma pessoa visivelmente desequilibrada
+        que a cada passo meu fora da curva, tem a certeza de que eu estou com outra.
+        Por Deus, <span class="nomes Amanda"></span>, <b>eu continuo aqui </b>e
+        <b>esse </b>é o controle que <b>você </b>tem sobre mim.
+    </p>
+    <p>—
+        <b>Desequilibrada</b>? — A voz da <span class="nomes morena"></span>
+        sai entrecortada e o semblante machucado em seu rosto faz o peito de <span class="nomes Calum"></span>
+        estremecer. <b>Não queria machucá-la</b>,
+        mas a essa altura do campeonato não conseguia mais ter controle sobre <b>essa </b>situação. Ele afasta seus
+        lábios
+        algumas vezes e busca palavras para consertar seu erro, no
+        entanto é prontamente interrompido pela namorada. — Você <b>acabou </b>de dizer que estava com outra, <span
+            class="nomes Calum"></span>.
+    </p>
+    <p>—
+        Eu não disse isso, <span class="nomes Mandy"></span>. — Ele balança a cabeça de um lado para o outro,
+        tentando soar o mais sereno possível e, então, dá dois passos em direção a
+        garota. </p>
+    <p><span class="nomes Amanda"></span>,
+        por outro lado, dá as costas ao amado e caminha até a sala, onde de senta em
+        uma das poltronas, apoia os cotovelos sobre os joelhos e chora, guardando o
+        rosto entre suas mãos.</p>
+    <p>—
+        <span class="nomes Amanda"></span>... — Ele tenta atrair sua atenção, mas a garota não o olha. As lágrimas
+        corriam seu rosto com uma intensidade bem maior do que antes e <span class="nomes Mandy"></span> nem ao
+        menos se dava ao trabalho de tentar contê-las. Seu tórax soltava a medida que o
+        ar se fazia necessário e, exausto, <span class="nomes Hood"></span> respira fundo, esfregando sua têmpora.
+    </p>
+    <p>A
+        verdade é que, por mais que <span class="nomes Calum"></span> amasse <span class="nomes Amanda"></span>, ele
+        estava
+        cansado daquilo. Há
+        meses o relacionamento dos dois não era mais o mesmo e ele simplesmente não
+        tinha mais força para lutar contra o desgaste causado por todas aquelas
+        situações.</p>
+    <p>—
+        Isso é tóxico — O <span class="nomes moreno"></span> dá de ombros e <span class="nomes Amanda"></span> ergue seu
+        olhar em direção a
+        ele, usando o dorso de suas mãos para limpar seu rosto molhado. — Você consegue
+        nos ouvir? — <span class="nomes Calum"></span> questiona e a <span class="nomes morena"></span> solta um riso
+        entristecido, puxando o
+        choro pelo nariz — Nós estamos em um relacionamento tóxico em que um faz mal ao outro. — Ele aponta para si
+        mesmo e
+        para a
+        garota algumas vezes e então dá de ombros, soltando um riso vago.</p>
+    <p>—
+        <b>Eu </b>faço mal para você? — A <span class="nomes morena"></span>
+        questiona, arqueando as sobrancelhas. No instante em que percebe que não
+        receberia uma resposta do amado, solta um riso irônico e limpa as mãos molhadas
+        no tecido de sua calça — <span class="nomes Calum"></span>, você me colocou em uma posição em que eu tenho que
+        te
+        defender das críticas da minha família e
+        dos meus amigos, <b>mesmo sabendo que eles
+            estão certos </b>— <span class="nomes Amanda"></span> dá de ombros, puxando todo ar que consegue para
+        dentro de seus pulmões e, então, levanta-se do
+        sofá, dando pequenos passos à frente, em direção a <span class="nomes Hood"></span>. — <b>Você </b>me colocou em
+        um
+        lugar onde eu preciso abandonar as minhas
+        morais e ir contra <b>tudo </b>o que eu
+        acredito — Involuntariamente, <span class="nomes Mandy"></span> aumenta o seu tom de voz e <span
+            class="nomes Calum"></span> estremece
+        quando nota a ausência do brilho corriqueiro que costumava iluminar os olhos
+        <span class="nomes negros"></span> da namorada — E eu faço tudo isso porque
+        eu te amo, <b><i>merda</i></b>! — Exausta e visivelmente machucada, <span class="nomes Amanda"></span> deixa uma
+        última e solitária lágrima escorrer pela sua bochecha. Em um movimento quase
+        que irreflexo, a <span class="nomes morena"></span> leva sua mão esquerda ao rosto e seca a região molhada,
+        enquanto <span class="nomes Calum"></span> a encara sem reação.
+    </p>
+    <p>Assim
+        que a racionalidade do garoto fala mais alto e ultrapassa a voz da emoção, <span class="nomes Hood"></span>
+        respira fundo e dá dois passos para trás, distanciando-se de <span class="nomes Amanda"></span>. </p>
+    <p>—
+        Então eu acho melhor você parar de me amar, <span class="nomes Mandy"></span>. — Ele dá de ombros e a
+        <span class="nomes morena"></span> se surpreende.
+    </p>
+    <p>Por
+        um instante, os dois permanecem em silêncio e <span class="nomes Amanda"></span> leva alguns minutos para
+        processar
+        o que <span class="nomes Calum"></span> acabou de dizer. No entanto, no
+        momento em que sua ficha cai, a garota solta
+        um riso e balança a cabeça de um lado para o outro.</p>
+    <p>—
+        Você tem razão, <span class="nomes Calum"></span>. <b>Essa </b>é a
+        melhor solução. — Ela encolhe os seus ombros e passa pelo namorado, agarrando
+        em suas mãos a alça de uma mochila que que tinha sido estrategicamente largada
+        no canto do cômodo. &nbsp;</p>
+    <p>Sem
+        entender, <span class="nomes Hood"></span> acompanha os movimentos com a testa enrugada e sente o ar fugir
+        de seus pulmões no instante em que vê <span class="nomes Mandy"></span> seguir em direção à porta do
+        apartamento.
+        Apavorado, ele aperta seus passos
+        até a amada.</p>
+    <p>—
+        O que você está fazendo? — Seu tom de voz é exasperado e curioso ao mesmo
+        tempo. <span class="nomes Amanda"></span>, por sua vez, evita contato visual e concentra toda sua atenção
+        no molho de chaves em suas mãos. — <span class="nomes Amanda"></span>, o que você...</p>
+    <p>—
+        Eu estou indo embora, <span class="nomes Calum"></span> — Ela rebate entredentes e o rapaz a encara
+        boquiaberto — É <b>isso </b>o que eu estou
+        fazendo.</p>
+    <p>—
+        Não seja ridícula, <span class="nomes Mandy"></span>. Você não tem para onde ir — <span
+            class="nomes Hood"></span>
+        solta um riso
+        nervoso e estende sua mão, tentando alcançar a de <span class="nomes Amanda"></span>, mas a garota é mais
+        rápida e consegue se esquivar do toque do garoto.</p>
+    <p>—
+        Vou passar uns dias na casa do <span class="nomes Ashton"></span> e ai... — A <span class="nomes morena"></span>
+        faz
+        uma pausa, umedece
+        os lábios e lança um olhar rápido para o namorado.</p>
+    <p>—
+        E aí...? — Ele cerra os olhos atento e <span class="nomes Amanda"></span> solta um longo
+        suspiro.</p>
+    <p>—
+        E aí eu volto para casa. Eu volto para Sydney. — <span class="nomes Amanda"></span> dá de ombros, tentando
+        parecer o mais indiferente possível e <span class="nomes Calum"></span> arqueia as sobrancelhas, sentindo o
+        peso daquelas palavras caírem sobre o seu corpo como mais de mil toneladas.</p>
+    <p>Por
+        aquilo o nosso rockstar não esperava. Por mais insuportável que estivesse sendo
+        a convivência entre os dois, <span class="nomes Calum"></span> tinha certeza de que não conseguiria viver
+        um dia que fosse em Los Angeles sem <span class="nomes Amanda"></span>. Aquela menina era a âncora que o
+        mantinha agarrado às suas raízes australianas e o impedia de cair na tentação
+        da cidade dos anjos. Tirar <span class="nomes Amanda"></span> de <span class="nomes Calum"></span> seria como
+        tirar
+        o escudo do <b>Capitão América</b>. </p>
+    <p>—
+        Você não pode fazer isso comigo. Por favor, não faz isso, <span class="nomes Mandy"></span>. — A voz de
+        <span class="nomes Calum"></span> é bem mais baixa que o normal e um riso leve salta pelos lábios da garota
+        — Nós estamos de cabeça quente, mas ainda podemos resolver essa situação. Vem
+        cá, vamos conversar. — O <span class="nomes moreno"></span> a chama e mais uma vez tenta alcançar as mãos
+        de <span class="nomes Amanda"></span> que, como antes, é rápida o suficiente para conseguir fugir do toque
+        do rapaz.
+    </p>
+    <p>—
+        Eu cansei de conversar, <span class="nomes Calum"></span> — No momento em que a porta se abre, a <span
+            class="nomes morena"></span> dá
+        de ombros e lança mais um olhar para o namorado. — Por que você não convida o
+        Steve ou a própria Paige para vir conversar com você aqui? Aproveita que a <b>idiota </b>da sua namorada não vai
+        ser
+        mais
+        um empecilho. — Ela sorri torto e <span class="nomes Hood"></span> respira fundo, coçando a lateral de sua
+        cabeça.</p>
+    <p>—
+        Você está sendo irracional, <span class="nomes Amanda"></span>. — O <span class="nomes moreno"></span> rebate e
+        a
+        garota revira os
+        olhos, cruzando o batente que ligava o apartamento onde os dois moravam ao
+        corredor comum do prédio — Por favor, entra e vamos resolver isso como dois
+        adultos. <b>Nós sempre resolvemos.</b></p>
+    <p>—
+        <b>Irracional</b>? — Ela franze o cenho e,
+        sem nem ao menos pensar, <span class="nomes Hood"></span> arqueia as sobrancelhas e balança a cabeça na
+        afirmativa. Exausta, <span class="nomes Mandy"></span> revira os olhos. — Francamente, <span
+            class="nomes Calum"></span> — Profere por
+        fim, antes de apressar seus passos para longe do namorado.
+    </p>
+    <p>Certa
+        de que o elevador demoraria mais tempo do que ela pode realmente esperar,
+        <span class="nomes Amanda"></span> decide correr pelas escadas, o mais rápido que consegue. <span
+            class="nomes Hood"></span>, por sua
+        vez, ainda não estava decidido a deixá-la ir, então segue a <span class="nomes morena"></span> com a mesma
+        velocidade em seus pés.
+    </p>
+    <p>—
+        Se você fizer isso... — Ele se manifesta ofegante, no momento em que os dois
+        cruzam a porta da saída de emergência e chegam ao hall do prédio em que
+        moravam. Assustado, o porteiro acompanha a discussão com os olhos arregalados.
+        — ... não precisa se dar ao trabalho de voltar — Profere, tentando controlar o
+        ritmo de sua respiração e a garota volta a olhá-lo.</p>
+    <p>—
+        Não se preocupe, <b>meu amor</b> — Ela dá
+        de ombros, caminhando para trás e, embora seu tom de voz esteja repleto de
+        ironia e exista um sorriso delineado em seus lábios, <span class="nomes Hood"></span> sente seu peito
+        comprimir ao mínimo quando vê algumas lágrimas escorrerem pelo rosto da <span class="nomes morena"></span>
+        que ele tanto ama — <b>Eu não vou voltar </b>— &nbsp;Diz por fim, antes de dar as costas ao
+        namorado e seguir em direção à saída do prédio. <span class="nomes Hood"></span>, por sua vez, balança a
+        cabeça de um lado para o outro, notavelmente em negação, à medida que sente o
+        seu coração apertar por puro desespero de perdê-la.</p>
+    <p>Por
+        conseguinte, <span class="nomes Calum"></span> acelera seus passos atrás de <span class="nomes Amanda"></span>
+        e, no
+        instante em que os
+        pés de ambos tocam o cimento sujo da calçada, ele envolve seus dedos ao redor
+        do antebraço da garota, imobilizando-a por
+        alguns segundos.</p>
+    <p>—
+        Me solta. — Ela range os dentes, puxando seu braço de volta, no entanto, <span class="nomes Calum"></span>
+        é notavelmente mais forte e todo esforço que a garota faz para se soltar parece
+        inútil — Mas que merda, <span class="nomes Calum"></span>. Me solta <b>agora!</b>
+        — &nbsp;A <span class="nomes morena"></span> grita e reúne toda sua força
+        para empurrar o corpo do namorado para longe do seu. <span class="nomes Hood"></span>, então, cai sentado
+        sobre a calçada e, com o impulso, <span class="nomes Amanda"></span> se desequilibra, sendo involuntariamente
+        lançada para o meio da avenida.</p>
+    <p>A
+        partir desse momento, tudo parece acontecer em câmera lenta. Enquanto <span class="nomes Calum"></span>
+        assiste à cena estarrecido, um veículo em alta velocidade colide com o corpo de
+        <span class="nomes Amanda"></span>, arremessando a menina alguns metros à frente.
+    </p>
+    <p>—
+        <b>Não! </b>— <span class="nomes Hood"></span> grita e seus músculos
+        estremecem ao ver o corpo da garota girar algumas vezes sobre o asfalto.
+    </p>
+    <p>Atordoado,
+        <span class="nomes Calum"></span> se levanta da calçada e corre em direção à amada que, por sua vez, já
+        tinha perdido a consciência.
+    </p>
+    <p>—
+        <span class="nomes Mandy"></span>, <span class="nomes Mandy"></span>! Por favor — A voz do garoto sai embargado
+        e,
+        involuntariamente,
+        seus olhos acumulam uma grande quantidade de lágrimas. <span class="nomes Calum"></span>, então, se ajoelha
+        ao lado da garota e envolve o corpo desacordado em seus braços — Você não pode
+        fazer isso comigo, <b>vida. </b>Você não
+        pode me deixar sozinho. — O garoto estremece, pressionando ainda mais o corpo
+        de <span class="nomes Amanda"></span> contra o seu e, então, sente algo líquido e quente molhar seus dedos
+        que seguravam firmemente a nuca da garota. Absorto, <span class="nomes Hood"></span> ergue a sua mão e,
+        apavorado, arregala os olhos ao ver sua pele manchada pela cor vermelha.
+    </p>
+    <p><b><i>Sangue.</i></b></p>
+    <p>Desconhecidos
+        curiosos cercam o casal e as luzes da avenida refletem sobre a pele de <span class="nomes Amanda"></span>,
+        enquanto <span class="nomes Calum"></span> pressiona um lábio contra o outro e sente cada um de seus
+        músculos doerem como nunca tinha sentido antes.</p>
+    <p>—
+        Fica, <span class="nomes Mandy"></span>. Por favor, fica. — Ele implora, acariciando o rosto da namorada e
+        manchando a pele dela com o vermelho preso aos seus dedos, ao mesmo tempo que
+        as lágrimas escorrem pelo seu rosto e caem sobre as pálpebras fechadas de
+        <span class="nomes Amanda"></span>.
+    </p>
+    <p><b>Los Angeles, maio de 2020.</b></p>
+    <p>—
+        A culpa é minha, <span class="nomes Duke"></span> — O <span class="nomes moreno"></span> dá de ombros com os
+        olhos
+        cravados na
+        fotografia em suas mãos — A <span class="nomes Mandy"></span> não está mais aqui e a culpa <b>é minha </b>—
+        <span class="nomes Calum"></span> sorri sem humor,
+        passando a ponta de seu indicador sobre o rosto da amada. Seu coração dói e ele
+        respira fundo, fecha os olhos e balança a cabeça de um lado para o outro — É
+        minha culpa porque eu sou um <b>merda!</b>
+        — <span class="nomes Hood"></span> esbraveja arremessando o porta retrato longe. Este, por sua vez,
+        choca-se contra a parede e se desfaz em pedaços bem menores, que caem sobre o chão.
+    </p>
+    <p>O
+        <span class="nomes moreno"></span> apoia os cotovelos sobre os joelhos e afunda seu rosto entre suas mãos,
+        puxando os tufos de cabelo presos a lateral de sua cabeça. Ele se esforça para
+        manter o ritmo de sua respiração regulado, mas seus pulmões não parecem
+        obedecer ao seu comando.<b></b>
+    </p>
+    <p>&nbsp;—
+        Sinceramente, eu só queria entender por que ela. &nbsp;— <span class="nomes Hood"></span> dá de ombros, puxando
+        o
+        choro pelo
+        nariz, enquanto limpa o seu rosto molhado com o dorso de suas mãos — Devia ter
+        sido eu porque <b>eu merecia </b>— O seu
+        tom de voz aumenta e <span class="nomes Calum"></span> aponta para o próprio peito. Seu peito aperta e a
+        sensação claustrofóbica volta a importunar seus pulmões, no entanto, nos
+        últimos dias essa dor de tornou tão corriqueira que o garoto nem sequer se
+        importava em senti-la.<b></b></p>
+    <p>—
+        Não. Não deveria ter sido você. — Um tom de voz adocicado penetra os seus
+        ouvidos e, involuntariamente, <span class="nomes Hood"></span> ergue o seu rosto. Confuso, ele franze o
+        cenho e varre o apartamento com os olhos, não encontrando nada além de seu
+        cachorrinho apreensivo, sentado ao lado de seus pés.</p>
+    <p>Exausto,
+        <span class="nomes Calum"></span> volta a abaixar a cabeça e deixa um riso nervoso saltar de seus lábios,
+        crente de que tinha atingido o pico mais alto da loucura.
+    </p>
+    <p>—
+        Era para ser eu, <span class="nomes Calum"></span>. — Novamente, o tom de voz atravessa os canais auditivos
+        de <span class="nomes Hood"></span> e o garoto ergue a cabeça mais uma vez — Aconteceu <b>exatamente </b>o que
+        deveria acontecer — A figura na sua frente dá de
+        ombros, esboçando um sorriso singelo nos lábios e <span class="nomes Hood"></span> grita.</p>
+    <p>No
+        momento em que os olhos <span class="nomes castanhos"></span> do garoto focalizam a imagem de sua ex
+        namorada parada há alguns metros de distância, <span class="nomes Calum"></span> salta de onde está sentado
+        e foge para trás do sofá, como se aquilo tivesse algum poder mirabolante capaz
+        de protegê-lo.</p>
+    <p>Encolhido
+        atrás do imóvel e com o rosto afundado em suas mãos, <span class="nomes Calum"></span> chacoalha a cabeça
+        de um lado para o outro e, então, solta uma gargalhada. </p>
+    <p>—
+        Isso é loucura — Ele constata — É isso, eu estou louco — <span class="nomes Hood"></span> dá de ombros, se
+        levanta do chão e começa a andar de um lado para o outro, enquanto <span class="nomes Amanda"></span>
+        assiste à cena em silêncio — Não é real. — Profere,
+        esfregando a têmpora com as pontas de seus dedos — <b>Não. É. Real.</b> — <span class="nomes Calum"></span>
+        range os
+        dentes, pressionando firmemente suas
+        pálpebras — <b><i>Não é real! </i></b>— Ele esbraveja, estapeando a lateral de sua
+        própria cabeça, enquanto as lágrimas escorrem pelas suas bochechas. </p>
+    <p><span class="nomes Amanda"></span>
+        não tinha certeza se ainda podia sentir algo tão humano quanto a dor, mas podia
+        jurar que algo em seu peito gritava de desespero por ver <span class="nomes Calum"></span> naquela
+        situação. &nbsp;</p>
+    <p>A
+        força nos músculos das pernas de <span class="nomes Hood"></span> desaparece e seus joelhos estremecem,
+        então ele cai sentado no chão.</p>
+    <p>—
+        Não é real, não é real... — Ele profere incontáveis vezes, pressionando
+        fortemente suas pálpebras com as mãos.</p>
+    <p>—
+        <span class="nomes Calum"></span>... — <span class="nomes Amanda"></span> se ajoelha ao lado do garoto e
+        mordisca
+        seu lábio inferior.
+    </p>
+    <p>A
+        voz era igual, a fisionomia era a mesma e até mesmo o cheiro lembrava o dela,
+        mas <span class="nomes Calum"></span> sabia que aquilo não era real. <b>Não
+            tinha como ser</b>. </p>
+    <p>—
+        Olha para mim, <b><i>meu amor</i></b> — O tom aveludado de voz da garota faz o peito de <span
+            class="nomes Hood"></span>
+        estremecer, mas, ainda assim, ele balança a cabeça na negativa.</p>
+    <p>—
+        Você não está aqui. <b>Não está! </b>— Ele
+        esbraveja apertando as laterais de seu crânio — <b>Sai da minha cabeça, <span class="nomes Amanda"></span>! Sai
+            agora! </b>— Implora, mantendo seus
+        olhos fortemente fechados — <b>Você está
+            morta! Eu matei você!</b> — Profere, sentindo sua garganta queimar e, então, o
+        ritmo de seus batimentos cardíacos diminui e ele parece se acalmar no instante
+        em que sua ficha mental cai — eu... eu matei você — sua voz sai entrecortada e,
+        exausto, <span class="nomes Calum"></span> relaxa a sua postura, liberando o choro com uma intensidade
+        ainda maior do que antes.</p>
+    <p>eu procurei o significado de imergido e existe, mas eu acho que
+        imerso fica melhor nesse contexto</p>
+
+    <h2 class="capitulo" id='DOIS'>DOIS</h2>
+    <br>
+
+    <p>
+        <center><b><i>“We´ll
+                    be a fine line. We´ll be alright”</i></b>
+    </p>
+    <p>Harry
+        Styles, Fine Line.</center>
+    </p>
+    <p><b>&nbsp;</b></p>
+    <p><b>Los Angeles, abril de 2020.</b></p>
+    <p>&nbsp;</p>
+    <p>—
+        <span class="nomes Calum"></span>! — <span class="nomes Ashton"></span> esbraveja no instante em que seus olhos
+        encontram a figura do
+        amigo sentado em uma das poltronas amarronzadas da sala de espera do hospital.
+        O barulho causado pelo atrito entre as solas de seus sapatos e o chão encerado
+        atrai a atenção de <span class="nomes Hood"></span> e, involuntariamente, olha na direção do outro.
+    </p>
+    <p>Mesmo
+        de longe, <span class="nomes Ashton"></span> consegue notar a exaustão no rosto do amigo. Os olhos de <span
+            class="nomes Calum"></span>
+        estavam inchados e avermelhados, enquanto seu o cabelo estava bagunçado e suas
+        roupas amarrotadas. A mancha vermelha sobre a blusa do rapaz chama ainda mais a
+        atenção de <span class="nomes Irwin"></span> que estremece só de pensar no que tinha acontecido.</p>
+    <p>—
+        O que aconteceu? — Ele questiona, analisando rapidamente cada detalhe do amigo
+        que, por sua vez, solta um longo suspiro.</p>
+    <p>—
+        Ela foi atropelada — O <span class="nomes moreno"></span> dá de ombros, encarando fixamente a listra azul
+        sobre o chão acinzentado — e é culpa minha, <span class="nomes Ashton"></span>. — Um sorriso vago e torto
+        salta pelos lábios de <span class="nomes Hood"></span> e, sem entender, <span class="nomes Irwin"></span> franze
+        o
+        cenho — Nós tivemos
+        uma discussão feia, ela disse que ia
+        passar uns dias na sua casa e, então, voltar para Sydney. Eu não quis deixar, a briga foi parar na rua e, bom...
+        —
+        <span class="nomes Calum"></span> suspira e <span class="nomes Ashton"></span> se senta na poltrona ao lado do
+        melhor amigo sem dizer
+        nada.— Eu deveria ter deixado ela ir — <span class="nomes Hood"></span> afunda o rosto entre suas mãos e
+        <span class="nomes Irwin"></span> afaga as costas do amigo, tentando tranquilizá-lo.
+    </p>
+    <p>&nbsp;
+        — Não é culpa sua — <span class="nomes Ashton"></span> profere e <span class="nomes Calum"></span> solta um
+        riso,
+        erguendo o seu olhar
+        de encontro ao amigo.</p>
+    <p>—
+        A <span class="nomes Amanda"></span> acha que eu passei o dia com a Paige, irmão — Profere e, estarrecido,
+        <span class="nomes Ashton"></span> une as sobrancelhas — E sabe por que ela acha isso? Porque eu disse —
+        <span class="nomes Calum"></span> dá de ombros e, surpreso, <span class="nomes Irwin"></span> arregala os olhos.
+    </p>
+    <p>—
+        <b>O qu</b><b>ê</b>? Você estava?&nbsp;
+    </p>
+    <p>—
+        Claro que não, <span class="nomes Ashton"></span> — <span class="nomes Hood"></span> ri, balançando a cabeça de
+        um
+        lado para o outro —
+        Passei o dia sozinho na casa do Steve. Não tinha ninguém lá. Nem mesmo ele. —
+        <span class="nomes Calum"></span> respira fundo, esfregando a têmpora com a base de seus dedos, enquanto
+        permite ser levado pelos seus pensamentos há algumas horas mais cedo naquele
+        mesmo dia. — Steve está gravando em Nova York e o clima com a <span class="nomes Mandy"></span> estava
+        estressante demais, então perguntei se podia passar um tempo na casa dele — O
+        garoto suspira, apoiando suas mãos sobre os seus joelhos. <span class="nomes Ashton"></span>, por sua vez,
+        acompanha a cena em total silêncio — Eu só queria um tempo sozinho, <span class="nomes Ashton"></span>. Eu
+        precisava parar e dar uma respirada, justamente porque não queria brigar com
+        ela.
+    </p>
+    <p><span class="nomes Calum"></span>
+        sente seu peito comprimir ao mínimo e, então, relaxa a sua postura, voltando a
+        cobrir seu rosto. Preocupado, <span class="nomes Irwin"></span> morde os beiços com certa força.</p>
+    <p>—
+        O problema é que eu esqueci que em um dos raros momentos que estávamos bem, eu
+        prometi que a levaria para almoçar hoje. Acabei perdendo a noção do tempo e já
+        eram mais de onze da noite quando eu cheguei em casa. A <span class="nomes Amanda"></span>, é claro, me
+        encheu de pergunta e eu estava um pouco alterado, então... enfim perdi a
+        paciência e fiz a <b><i>minha menina</i></b> acreditar que eu teria coragem de trocá-la por
+        outra. — Um sorriso entristecido salta pelos lábios de <span class="nomes Calum"></span> e ele lança um
+        olhar rápido para o amigo — Eu não conseguiria, <span class="nomes Ashton"></span>... trair ela, você sabe.
+        <b>Eu não conseguiria.</b> — <span class="nomes Irwin"></span> balança
+        a cabeça na afirmativa. Instantaneamente, ele
+        se lembra das vezes em que <span class="nomes Hood"></span> trocou uma boa noitada regada de promiscuidade pela
+        solidão de seu quarto de hotel. Ele preferia <b>isso </b>a correr o risco de perder pela fraqueza da carne e
+        acabar
+        colocando o relacionamento com <span class="nomes Amanda"></span> em risco. — Eu a amo, <span
+            class="nomes Ashton"></span>. Você não
+        imagina o quanto. — <span class="nomes Calum"></span> lança um olhar para o amigo e <span
+            class="nomes Irwin"></span> vê as lágrimas
+        escorrerem pelas bochechas do garoto. Em um gesto bastante involuntário, <span class="nomes Ashton"></span>
+        puxa <span class="nomes Calum"></span> para perto de si e envolve os ombros do <span
+            class="nomes moreno"></span> em
+        um abraço
+        acalentador.
+    </p>
+    <p>—
+        Eu sei... — Profere, afagando os cabelos e <span class="nomes Calum"></span>, enquanto sente o tórax do
+        amigo contrair contra a sua pele.</p>
+    <p>—
+        Eu disse que se ela fosse embora, ela não precisava se dar ao trabalho de
+        voltar... — O <span class="nomes moreno"></span> puxa o choro pelo nariz e <span class="nomes Irwin"></span>
+        fecha
+        os olhos, sentindo
+        seus músculos estremecerem — ... mas agora a única coisa que eu quero é que ela
+        volte — Um sorriso torto e singelo salta pelos lábios de <span class="nomes Hood"></span> e <span
+            class="nomes Ashton"></span> balança
+        a cabeça na afirmativa.</p>
+    <p>Há
+        alguns passos de distância, <span class="nomes Calum"></span> consegue enxergar o médico que atendeu <span
+            class="nomes Amanda"></span>
+        no momento em que a garota deu entrada na sala de emergência do hospital. Em um
+        impulso único, o garoto salta da poltrona e fica em
+        pé. Com o dorso de suas mãos, ele limpa o rosto molhado e <span class="nomes Ashton"></span> acompanha seus
+        movimentos, apertando seu ombro assim que percebe o olhar do médico estacionado
+        sobre eles.</p>
+    <p>—
+        Eu imagino que vocês sejam amigos da <span class="nomes Amanda"></span>... <span class="nomes Amanda"></span>
+        <span class="nomes Steele"></span>? — Ele questiona,
+        franzindo a testa e arrumando os óculos, enquanto checa o nome da menina no
+        prontuário em suas mãos. Tanto <span class="nomes Hood"></span>, quanto <span class="nomes Irwin"></span>,
+        balançam
+        a cabeça na
+        afirmativa e o doutor respira fundo, levantando os óculos de grau até sua testa. — <b>Eu sinto muito...</b>
+    </p>
+    <p>A
+        partir desse momento, <span class="nomes Calum"></span> não consegue ouvir mais nenhuma palavra sequer que
+        saía da boca do médico. Os lados emocionais e
+        racionais de <span class="nomes Hood"></span> são, involuntariamente, desligados e o rapaz sente o seu
+        mundo desabar bem em frente aos seus olhos.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, maio de 2020</b></p>
+    <p>&nbsp;</p>
+    <p>—
+        O que aconteceu não foi culpa sua, <span class="nomes Calum"></span>. Não fale besteira. — A <span
+            class="nomes morena"></span> sorri
+        levemente. <b></b></p>
+    <p>Até
+        o momento em questão, <span class="nomes Hood"></span> tinha plena certeza de que havia enlouquecido. No
+        entanto, o som agudo do latido de seu cachorro chama a sua atenção e,
+        involuntariamente, o garoto dirige o seu olhar em direção ao cachorro. O animal
+        latia incansávelmente e girava em torno do seu próprio corpo e <span class="nomes Calum"></span> constata
+        que há, pelo menos, trinta dias não via <span class="nomes Duke"></span> tão feliz como ele parecia estar
+        agora. <b></b></p>
+    <p>—
+        Ei, carinha! — A <span class="nomes morena"></span> franze o nariz, em um semblante infantil e <span
+            class="nomes Hood"></span> se
+        surpreende ao ver <span class="nomes Duke"></span> correr em direção a dona.<b></b></p>
+    <p>—
+        Você também está vendo? — Ele questiona, com os olhos cravados no cachorro que,
+        por conseguinte, solta um latido e luta para enfiar o seu focinho sobre a mão de <span
+            class="nomes Amanda"></span>,
+        implorando por carinho. <span class="nomes Mandy"></span> logo
+        dá espaço para o cachorro e afaga os pelos do animal, lançando um olhar rápido
+        para <span class="nomes Hood"></span> que assiste à cena boquiaberto — Não é possível — Ele profere, depois de
+        alguns segundos em silêncio e, em
+        seguida, levanta-se. Passa as mãos pelo rosto com certa brutalidade, como se
+        tentasse acordar de um pesadelo, e caminha de um lado para o outro diversas
+        vezes. — Você não está aqui — Ele solta um riso leve apontando para <span class="nomes Amanda"></span> que,
+        por sua vez, levanta-se do chão e se aproxima do amado em passos lentos.<b></b></p>
+    <p>—
+        Eu estou aqui — A garota garante. — Por favor, não tenha medo — Por
+        conseguinte, <span class="nomes Calum"></span> interrompe seu andar nervoso e olha para o espírito de sua
+        (ex) namorada.<b></b></p>
+    <p>—
+        Eu não estou com medo! — Esbraveja, arrancando um riso dos lábios de <span class="nomes Amanda"></span>.
+        Uma sensação bastante conhecida que há um mês fora deixada de lado volta a
+        percorrer a espinha de <span class="nomes Hood"></span> e ele puxa todo o ar que consegue para dentro de
+        seus pulmões.<b></b></p>
+    <p><b><i>Era
+                ela</i></b>. O mesmo sorriso, o mesmo tom de voz, a mesma paciência. As
+        roupas e o penteado eram iguais aos que ela usava na noite em que tudo
+        aconteceu. <b><i>Era ela.</i></b> </p>
+    <p><b><i>Mas
+                não totalmente.</i></b></p>
+    <p>—
+        Eu só... só não consigo acreditar — Sua voz sai entrecortada e <span class="nomes Mandy"></span> libera um
+        longo suspiro.<b><i></i></b></p>
+    <p>—
+        Não consegue acreditar que sou eu? — Ela questiona e <span class="nomes Calum"></span> dá de ombros,
+        chacoalhando a cabeça na afirmativa — Você me vê, certo? — <span class="nomes Amanda"></span> arqueia as
+        sobrancelhas e <span class="nomes Hood"></span> hesita, antes de concordar com a sua pergunta. A menina,
+        por conseguinte, sorri. — Tudo bem... — Ela morde
+        o canto interno de suas bochechas e varre o ambiente com os olhos, em busca de
+        algo que pudesse provar que — de um jeito inexplicável — ela estava <b><i>mesmo
+            </i></b>ali — Você consegue se lembrar daquela vez que <span class="nomes Ashton"></span> nos arrastou para
+        um karaokê naquele bairro japonês? — Ela questiona, com um sorriso nostálgico
+        no rosto e, sem entender, <span class="nomes Hood"></span> franze o cenho — Você se lembra como nos
+        divertimos? Naquela noite vocês esqueceram que eram famosos e nós nos
+        divertimos como costumava acontecer quando nos reuníamos em Sydney. <b><i></i></b></p>
+    <p>De
+        repente algo longe de ter uma explicação humana faz com que o computador posto
+        sobre a mesa na sala de jantar ligue, o aplicativo de música é aberto e, então,
+        uma música específica e bastante familiar aos ouvidos do casal começa a tocar.<b><i></i></b></p>
+    <p><span class="nomes Mandy"></span>
+        dá dois passos para trás, distanciando-se do amado e um sorriso salta de seus
+        lábios.</p>
+    <p>—
+        <b><i>Looks
+                like we made it</i></b> (parece que conseguimos) — A <span class="nomes morena"></span> dá de ombros,
+        cantando a letra da música e, surpreso, <span class="nomes Hood"></span> arqueia as sobrancelhas — <b><i>Look
+                how far we´ve been come, my baby</i></b> (veja quão longe chegamos, meu amor) —
+        Seus olhos <span class="nomes negros"></span> se estreitam à medida que o sorriso
+        nostálgico se alarga em seu rosto. <span class="nomes Mandy"></span>, por conseguinte, aponta para a foto
+        dos dois largada sobre o sofá. A mesma que <span class="nomes Calum"></span> admirava há alguns minutos. —
+        <b><i>We
+                might took the long way, but we knew we´d get there someday</i></b> (podemos
+        ter escolhido o caminho mais longo, mas nós sabíamos que chegaríamos lá um dia)
+        — Ela dá de ombros mais uma vez e um sorriso involuntário surge no rosto do
+        garoto. <span class="nomes Calum"></span> estava há tanto tempo sem sorrir que nem ao menos se lembrava da
+        dolorosa — no entanto, prazerosa — sensação
+        que um riso poderia trazer aos músculos de seu rosto.
+    </p>
+    <p><span class="nomes Amanda"></span>,
+        então, passeia pelo ambiente com os olhos em busca de algo e silenciosamente
+        comemora quando seu olhar encontra o controle da televisão sobre o sofá. Ela
+        inclina seu corpo para frente, toma o objeto em suas mãos e o ergue a altura de
+        seus lábios, como se aquilo fosse o seu microfone.</p>
+    <p><span class="nomes Calum"></span>,
+        por sua vez, revira os olhos e libera uma risada nasalada. Essa era uma cena
+        bastante corriqueira no dia a dia dos dois, <span class="nomes Mandy"></span> costumava agir igual todas as
+        vezes que precisava se arrumar para algum compromisso. Muitas das vezes esse
+        comportamento divertido da garota acarretava em minutos — ou até mesmo horas —
+        de atraso.</p>
+    <p>—
+        <b><i>They
+                said: I bet they´ll never make it...</i></b> (eles disseram: eu aposto que eles
+        nunca vão conseguir...) — A <span class="nomes morena"></span> morde a língua em um semblante engraçado e
+        <span class="nomes Hood"></span> acha graça — <b><i>...but just look at us now. We´re still together. Still
+                going
+                strong</i></b>
+        (..., mas apenas olhe para a gente agora. Nós continuamos juntos. Continuamos
+        fortes) — <span class="nomes Amanda"></span> dá de ombros, com um sorriso singelo no rosto, enquanto aponta
+        diversas vezes para o garoto e, em seguida, para o próprio peito.
+    </p>
+    <p><span class="nomes Hood"></span>,
+        no entanto, sente seu tórax arder por conta da última frase cantada e a menina
+        percebe sua mudança repentina de humor. Ela, por conseguinte, larga o controle
+        sobre o sofá e estende a mão na direção do amado, mas o garoto hesita.</p>
+    <p><span class="nomes Amanda"></span>,
+        então, respira fundo e dá alguns passos a frente, erradicando a distância entre
+        os dois. Sem se preocupar em pedir permissão, a <span class="nomes morena"></span> toma uma das mãos de
+        <span class="nomes Hood"></span> e a pousa sobre a sua cintura, deixando seus corpos rentes um ao outro. <span
+            class="nomes Calum"></span> se surpreende e ao mesmo tempo
+        se assusta quando sente o toque tão real de <span class="nomes Mandy"></span> contra a sua pele. Por mais
+        que soubesse perfeitamente o que tinha acontecido com a sua namorada, era cada
+        vez mais difícil acreditar que tudo aquilo não se passava de uma peça bem
+        dirigida pela sua própria imaginação.
+    </p>
+    <p>O
+        <span class="nomes moreno"></span> aperta ainda mais o corpo de <span class="nomes Amanda"></span> contra o seu
+        e os
+        dois começam a se
+        movimentar em uma dança leve e despreocupada, pela sala do apartamento onde
+        costumavam morar juntos. A garota entrelaça seus braços ao redor do pescoço de
+        <span class="nomes Hood"></span> e o garoto apoia sua cabeça sobre o ombro da amada.
+    </p>
+    <p>
+        <center><b><i>You're
+                    still the one</i></b>
+    </p>
+    <p>(Você
+        ainda é o cara)</p>
+    <p><b><i>You're
+                still the one I run to</i></b></p>
+    <p>(Você
+        ainda é o cara para quem eu corro)</p>
+    <p><b><i>The
+                one that I belong to</i></b></p>
+    <p>(O
+        cara a quem eu pertenço)</p>
+    <p><b><i>You're
+                still the one I want for life</i></b></p>
+    <p>(Você
+        ainda é o cara que eu quero para minha vida)</center>
+    </p>
+    <p>As
+        lágrimas se acumulam nos olhos de <span class="nomes Calum"></span> no momento em que ele inala o aroma
+        adocicado preso aos cabelos da sua garota e, aos poucos, ele deixa que elas
+        caiam sobre a pele dela. <span class="nomes Mandy"></span>, por sua vez, sente o corpo do namorado
+        estremecer contra o seu e, por mais doloroso que aquilo pudesse parecer, ela
+        respira fundo e afaga os cachos do cabelo de <span class="nomes Hood"></span>, dando o seu máximo para
+        confortá-lo.</p>
+    <p>
+        <center><b><i>You're
+                    still the one</i></b>
+    </p>
+    <p>(Você
+        ainda é o cara)</p>
+    <p><b><i>You're
+                still the one that I love</i></b></p>
+    <p>(Você
+        ainda é o cara que eu amo)</p>
+    <p><b><i>The
+                only one that I dream of</i></b></p>
+    <p>(O
+        único cara com quem eu sonho)</center>
+    </p>
+    <p>A
+        garota para de se movimentar e afasta o seu rosto do de <span class="nomes Calum"></span>. Com a ponta de
+        seu indicador, ela ergue o queixo do rapaz e traz o olhar marejado dele de
+        encontro ao seu.</p>
+    <p>—
+        <b><i>You're
+                still the one I kiss goodnight</i></b> (você ainda é o cara que eu dou um beijo
+        de boa noite) — Seu tom de voz é quase inaudível e, em seguida, <span class="nomes Amanda"></span> aproxima
+        seu rosto do de <span class="nomes Hood"></span> e deposita um beijo leve no canto dos lábios do garoto,
+        fazendo o coração do mesmo palpitar.
+    </p>
+    <p>—
+        Por que, <span class="nomes Mandy"></span>? Por que você está aqui? — Ele questiona, estranhamente
+        embriagado, enquanto aperta ainda mais a curva da cintura da garota. Ela sorri,
+        afastando alguns cachos para longe do rosto do rapaz.</p>
+    <p>—
+        Porque eu preciso que você se perdoe. — <span class="nomes Amanda"></span> dá de ombros e, por impulso,
+        <span class="nomes Hood"></span> se afasta da namorada — <span class="nomes Calum"></span>... — Apreensiva a
+        garota
+        morde seus beiços e
+        <span class="nomes Calum"></span> balança a cabeça de um lado para o outro, em negação.
+    </p>
+    <p>—
+        Eu não tenho como me perdoar, <span class="nomes Mandy"></span>. Não tenho. O que aconteceu foi culpa minha
+        e você sabe disso. — Um riso nervoso surge em seus lábios, enquanto as lágrimas
+        escorrem pelo seu rosto e, dessa vez, é <span class="nomes Amanda"></span> quem balança a cabeça na
+        negativa.</p>
+    <p>—
+        O que aconteceu <b>não foi </b>culpa sua.</p>
+    <p>—
+        É claro que foi — Ele revira os olhos exausto, puxando o choro pelo nariz — Eu
+        errei com você, <span class="nomes Amanda"></span>. — <span class="nomes Hood"></span> dá de ombros, limpando o
+        rosto molhado com o
+        dorso de suas mãos.</p>
+    <p>—
+        Nós erramos um com o outro. — A garota profere com as sobrancelhas arqueadas e
+        <span class="nomes Hood"></span> insiste em balançar a cabeça de um lado para o outro. — Eu já te perdoei,
+        <span class="nomes Calum"></span>. Por que você não pode fazer o mesmo? — A <span class="nomes morena"></span>
+        estreita seus olhos
+        sobre o garoto e, lentamente, tenta se aproximar. Dessa vez, <span class="nomes Hood"></span> não se
+        afasta.
+    </p>
+    <p>—
+        E-eu não acho que consigo fazer isso. — Profere, notavelmente hipnotizado pela
+        figura angelical a sua frente. A menina, no entanto, sorri pousando uma de suas
+        mãos sobre a bochecha de <span class="nomes Calum"></span> que, por consequência, fecha os olhos e deixa um
+        calafrio percorrer seu corpo ao sentir o toque dela sobre sua pele — Eu tenho
+        tanto medo de deixar de te amar, <span class="nomes Amanda"></span>. — Diz,
+        puxando todo ar que consegue para dentro de seus pulmões.</p>
+    <p>—
+        Então não deixe — Ela rebate, acariciando levemente a bochecha do garoto.</p>
+    <p>—
+        Mas eu também tenho medo de nunca conseguir te esquecer — <span class="nomes Calum"></span> profere,
+        arregalando os olhos avermelhados de encontro aos de <span class="nomes Amanda"></span> e a <span
+            class="nomes morena"></span> respira
+        fundo, umedecendo sua garganta.</p>
+    <p>—
+        Você não precisa deixar de me amar para me deixar ir, <span class="nomes Calum"></span> — Um sorriso
+        singelo salta de seus lábios e, confuso, <span class="nomes Hood"></span> franze o cenho — Eu vou estar
+        <b>sempre</b> com você. Bem aqui, óh! — Ela
+        franze o cenho, em um semblante gracioso e, então, espalma a sua mão sobre o
+        peito do namorado. Mais especificamente sobre o coração de <span class="nomes Calum"></span>.
+    </p>
+    <p>Involuntariamente,
+        os olhos de <span class="nomes Hood"></span> seguem a mão de <span class="nomes Amanda"></span> e, de um jeito
+        estranho, pela primeira
+        vez em quase um mês, o <span class="nomes moreno"></span> tem a sensação de que a corda que obstruía a sua
+        traqueia e por consequência o impedia de respirar, não estava mais lá.</p>
+    <p>—
+        Eu só preciso que você feche os olhos, <b><i>meu amor</i></b> — <span class="nomes Mandy"></span> diz serena,
+        atraindo o olhar de <span class="nomes Calum"></span> de volta para o seu — Desse jeito, você não vai me
+        ver indo embora — Um sorriso torto e singelo se forma em seus lábios e, por
+        mais triste que fosse, <span class="nomes Hood"></span> umedece seus lábios, balançando a cabeça na
+        afirmativa. A garota, então, toca levemente as pálpebras de <span class="nomes Calum"></span> e o próprio
+        cansaço se encarrega de fechá-las.</p>
+    <p>—
+        Eu amo você. — Ele profere, apertando a cintura da garota e <span class="nomes Amanda"></span> sorri.</p>
+    <p>—
+        Eu também. — Diz, por fim e seu toque sobre a pele de <span class="nomes Hood"></span> desaparece.</p>
+    <p>Instintivamente, <span class="nomes Calum"></span> volta a abrir seus olhos e percebe que a figura de
+        <span class="nomes Amanda"></span> não está mais a sua frente, ou em qualquer lugar alcançável a olho nu.
+    </p>
+    <p>A
+        música já tinha parado de tocar, o computador estava desligado e o controle da
+        televisão largado em cima do sofá. Não havia diferença alguma no ambiente
+        físico, mas o espiritual tinha mudado por completo.</p>
+    <p><span class="nomes Hood"></span>,
+        então, puxa o resquício de choro pelo nariz e lança um olhar rápido para <span class="nomes Duke"></span>.
+        Ele solta um longo suspiro e inclina seu corpo para baixo, agarrando o animal
+        em seus braços.</p>
+    <p>—
+        Vem, amigão. Vamos terminar logo com isso.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, maio de 2020 - 26 horas
+            depois.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p>Na
+        noite conseguinte, <span class="nomes Hood"></span> conseguiu dormir como há dias não conseguia. As oito
+        horas de sono foram mais do que suficiente para erradicar a exaustão que vinha
+        sentindo e deixá-lo mentalmente preparado para cumprir com o prometido. Não
+        preparou discurso algum, no entanto. Decidiu, por fim, que deixaria seu coração
+        falar o que bem entendesse. De um jeito, ou de outro, sabia que essa seria a
+        melhor homenagem para a <b>sua menina</b>.</p>
+    <p>O
+        som da campainha fez com que o <span class="nomes moreno"></span> despertasse de seus pensamentos e, então,
+        soltasse um longo suspiro. Ele checa o seu reflexo no espelho mais uma vez e
+        aperta ainda mais o nó de sua gravata.</p>
+    <p><b><i>“Você
+                parece um pinguim.” </i></b>— A voz de <span class="nomes Amanda"></span> ecoa pela sua
+        cabeça e, involuntariamente, sua mente o projeta para alguns anos atrás.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, novembro de 2018.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p><span class="nomes Calum"></span>
+        arqueia as sobrancelhas fitando o reflexo da namorada através do espelho e
+        <span class="nomes Amanda"></span> encolhe os ombros, com um sorriso leve nos lábios.
+    </p>
+    <p>—
+        E isso é bom? — O <span class="nomes moreno"></span> se interessa em saber e a garota franze nariz,
+        entortando levemente seus lábios, antes de dar pequenos passos em direção ao
+        amado.</p>
+    <p>—
+        Arrisco dizer que você vai ser o pinguim mais bonito desse <b><i>red carpet</i></b>, <span
+            class="nomes Calum"></span> <span class="nomes Hood"></span> —
+        <span class="nomes Mandy"></span> dá de ombros, envolvendo o pescoço do garoto com seus braços e apoiando o
+        queixo sobre seu ombro. <span class="nomes Hood"></span>, por sua vez, revira os olhos e solta um riso
+        nasalado.
+    </p>
+    <p>—
+        Eu vou encarar isso como um elogio — Ele profere, girando o seu tronco de
+        frente para a menina e <span class="nomes Amanda"></span> — que usava um vestido azul, longo e acinturado —
+        acha graça.</p>
+    <p>Hipnotizado,
+        os olhos de <span class="nomes Hood"></span> assistem em silêncio à graciosidade do riso de <span
+            class="nomes Mandy"></span> e, em
+        seguida, o <span class="nomes moreno"></span> pousa suas mãos sobre a cintura da garota, trazendo o corpo
+        dela de encontro ao seu.</p>
+    <p>—
+        Você está linda — Seu tom de voz é aveludado e, estranhamente envergonhada,
+        <span class="nomes Amanda"></span> morde os beiços, sentindo o garoto roçar seu nariz no dela.
+    </p>
+    <p>—
+        Você está nervoso? — Ela questiona, desviando completamente do elogio feito
+        pelo amado e erguendo seus olhos <span class="nomes negros"></span> de encontro aos dele. <span
+            class="nomes Calum"></span>, por
+        conseguinte, solta um longo suspiro e abraça a cintura da garota, deixando seus
+        corpos rentes um ao outro.</p>
+    <p>—
+        Na verdade, não — O <span class="nomes moreno"></span> dá de ombros, surpreendendo a garota que franze o
+        cenho, enquanto arruma o nó da gravata que ele usava.</p>
+    <p>—
+        E por que não? — <span class="nomes Amanda"></span> pergunta curiosa e um sorriso gracioso salta pelos
+        lábios do rapaz.</p>
+    <p>—
+        Porque, independente do que acontecer, <b>eu
+            sei que</b> <b>você vai estar lá comigo</b>.</p>
+    <p>&nbsp;</p>
+    <p><b>Los Angeles, maio de 2020.</b></p>
+    <p><b>&nbsp;</b></p>
+    <p>Com
+        um sorriso nostálgico no rosto, <span class="nomes Calum"></span> chacoalha a cabeça de um lado para o
+        outro e checa seu <b><i>smoking </i></b>uma última vez antes de seguir em direção a entrada do
+        apartamento, deixando aquela lembrança para trás.</p>
+    <p>—
+        Pronto? — <span class="nomes Ashton"></span> questiona no instante em que encontra a figura do melhor
+        amigo. Em silêncio, <span class="nomes Hood"></span> balança a cabeça na afirmativa, arrancando um sorriso
+        grandioso dos lábios do outro. </p>
+    <p>Em
+        pouco mais de vinte minutos a dupla de amigos chegou à igreja onde aconteceria a homenagem para <span
+            class="nomes Mandy"></span>.&nbsp;<span class="nomes Hood"></span>
+        respirou fundo antes de colocar seus pés sobre solo sagrado e estranhamente se
+        envergonhou ao perceber que aquela era a primeira vez, em anos, que ele
+        visitava uma igreja. </p>
+    <p>O
+        <span class="nomes moreno"></span> ergue seu rosto em direção ao altar e seus olhos fitam a <b>foto <i>dela.
+            </i></b>Na imagem, <span class="nomes Amanda"></span> sorria de orelha a orelha, em frente a um dos pontos
+        turísticos mais conhecidos do mundo. Um sorriso involuntário saltou pelos
+        lábios de <span class="nomes Hood"></span> no momento em que ele reconhece aquela foto como sendo uma de
+        suas favoritas da garota. Até porque, ele tinha sido o fotógrafo naquela
+        ocasião.&nbsp; &nbsp;
+    </p>
+    <p>Passando
+        por todas aquelas pessoas que lotavam cada espaço em cada um dos bancos da
+        igreja, <span class="nomes Calum"></span> soltou um suspiro tendo a certeza de que — com exceção de <span
+            class="nomes Luke"></span>,
+        <span class="nomes Michael"></span> e <span class="nomes Ashton"></span> — nenhuma delas tinha valor algum para
+        <span class="nomes Amanda"></span>. O garoto sabia
+        que, onde quer que estivesse, <span class="nomes Mandy"></span> não deveria estar muito feliz com a pessoa
+        responsável por essa lista de convidados.
+    </p>
+    <p>A
+        cerimônia teve início como toda e qualquer
+        missa corriqueira. O padre proferiu algumas palavras sobre Deus e, em seguida,
+        algumas pessoas sem importância apresentaram seus discursos prontos em
+        homenagem à garota como se aquilo fosse algum tipo de competição acadêmica.
+        <span class="nomes Calum"></span>, por conseguinte, foi o último a se manifestar.
+    </p>
+    <p><span class="nomes Irwin"></span>
+        apertou o ombro do amigo e os outros lhe lançaram um sorriso reconfortante,
+        tentando transmitir força ao rapaz que, por sua vez, respirou fundo e buscou
+        coragem para enfrentar todas aquelas pessoas em um momento tão delicado.</p>
+    <p>—
+        Eu acredito que vocês estejam esperando que eu diga que a <span class="nomes Mandy"></span> era uma pessoa
+        maravilhosa, não é? — Ele questiona e solta um riso ao ver os convidados se entreolharem, com sorrisos forçados
+        nos
+        lábios, enquanto balançam a
+        cabeça na afirmativa — O problema é que não importa quantas frases feitas eu
+        use, vocês <b>jamais </b>seriam capazes de
+        entender — <span class="nomes Hood"></span> dá de ombros, surpreendendo grande parte daquelas pessoas —
+        Vocês nunca tiveram a chance de conhecer a <span class="nomes Amanda"></span>, pessoal. E <b>pior,</b> vocês
+        nunca
+        tiveram a chance de
+        amá-la. Com exceção de alguns, <b>é claro </b>—
+        Sua voz estremece e <span class="nomes Calum"></span> lança um olhar rápido para os amigos sentados no
+        primeiro banco em frente ao altar. Em seguida, ele solta um suspiro, sentindo
+        as lágrimas se acumularem no canto de seus olhos e, então, volta a encarar as
+        pessoas a sua frente — <span class="nomes Amanda"></span> <span class="nomes Steele"></span> foi o grande amor
+        da
+        minha vida — Ele dá
+        de ombros, com um sorriso singelo — no entanto entristecido — em seus beiços.</p>
+    <p>Nesse
+        momento <span class="nomes Calum"></span> se surpreende ao ver a figura angelical da namorada sentada no último
+        banco da igreja. <span class="nomes Amanda"></span> sorri, balançando a cabeça na
+        afirmativa e, mesmo desconcertado, <span class="nomes Hood"></span> respira fundo, tentando retomar o seu
+        raciocínio.</p>
+    <p>—
+        Nós somos muito jovens e muito idiotas para saber algo sobre amor, — Ele dá de
+        ombros, depois de alguns instantes em silêncio e a garota solta um riso leve —
+        mas eu sabia que a amava. <b><i>Meu Deus</i></b>, como eu amava a <span class="nomes Mandy"></span>.
+        Como eu ainda amo. — Sua voz sai entrecortada e <span class="nomes Calum"></span> precisa fechar os olhos
+        por alguns segundos, deixando as lágrimas descerem pelo seu rosto, enquanto
+        <span class="nomes Mandy"></span> umedece os lábios, notavelmente emocionada com as palavras do garoto —
+        Mas a <b><i>minha menina</i></b> foi embora e me deixou aqui sozinho. — Enquanto
+        falava, a única coisa que os olhos de <span class="nomes Calum"></span> conseguiam fitar era a imagem de
+        <span class="nomes Amanda"></span> ao fundo, como se não houvesse mais ninguém ali além dos dois — Eu não
+        sei se vocês acreditam em Deus, mas no dia em que Ele tirou ela de mim, eu
+        desejei que Ele tivesse me levado no lugar dela porque <b><i>doeu</i></b>, como nada nunca
+        tinha doído antes.
+    </p>
+    <p><span class="nomes Calum"></span>
+        franze o cenho, sentindo seu peito comprimir e a menina precisa,
+        momentaneamente, desviar o olhar do amado </p>
+    <p>—
+        Mas eu sei que, eventualmente, essa dor vai passar. Sei que a raiva vai
+        diminuir e tenho certeza de que a tristeza vai embora. A única coisa que vai
+        permanecer é o amor que eu sinto por ela. — Ele profere, atraindo os olhos de
+        <span class="nomes Mandy"></span> de encontro aos seus mais uma vez. As lágrimas voltam a lotar as
+        pálpebras de <span class="nomes Hood"></span> e ele puxa o choro pelo nariz.— &nbsp;Há pouco me disseram que eu
+        posso amar alguém
+        e, ainda assim, deixar essa pessoa ir — <span class="nomes Hood"></span> respira fundo e um sorriso
+        orgulhoso brota nos lábios de <span class="nomes Mandy"></span> — Então, <span class="nomes Amanda"></span>,
+        <b><i>eu te amo...</i></b> — Ele
+        profere com um sorriso no rosto e, então, umedece sua garganta antes de
+        continuar. <span class="nomes Calum"></span> abaixa o rosto momentaneamente, balançando de um lado para o
+        outro, enquanto permite que algumas lágrimas caiam em direção ao chão.
+        Instantes depois, ele volta a erguer sua cabeça e respira fundo, antes de
+        proferir o seguinte. &nbsp;— ... <b><i>e eu
+                deixo que você vá.</i></b> — Uma sensação sufocante faz com que <span class="nomes Hood"></span> precise
+        puxar o ar pela boca e <span class="nomes Amanda"></span>, por outro lado, balança a cabeça na afirmativa —
+        A partir de hoje, eu vou viver uma vida por nós dois, — Ele promete com os
+        olhos cravados nela — mas tenha certeza de que eu não vou deixar de te amar nem
+        por um segundo sequer. — Diz por fim e, através do sorriso que vê nascer no
+        rosto de <span class="nomes Mandy"></span>, <span class="nomes Calum"></span> percebe: <b><i>ela tem
+                certeza.</i></b>
+    </p>
+    <p>Em
+        seguida, os olhos <span class="nomes castanhos"></span> do garoto acompanham os movimentos de <span
+            class="nomes Amanda"></span>,
+        enquanto ela se levanta e caminha em direção à saída da igreja. Lá a imagem
+        angelical da garota se torna cada vez mais distante e, então, desaparece.
+        <span class="nomes Calum"></span>, por sua vez, umedece a garganta e solta um longo suspiro sabendo que
+        independente da presença física, aquela menina seria <b><i>sempre </i></b>a parte mais
+        bonita da sua história.
+    </p>
+
+
+
+
+    <br><br>
+    <center><b>FIM</b></center>
+
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+
+
+
+
+
+    <!-- NOTA -->
+
+
+
+    <b>NOTA DA AUTORA:</b>
+    Espero que a nova versão tenha agradado a todos e, quando digo isso, me refiro àqueles que leram e àqueles que estão
+    entrando em contato com Ghost Of You pela primeira vez. Sei que ela não é uma história de final feliz, mas gosto de
+    pensar que além do perdão, ela também mostra a possibilidade de um recomeço. Enfim, no mais eu só tenho a agradecer
+    por
+    esses dois anos e por todos que acompanham as minhas histórias, escrever é algo que me faz extremamente feliz e eu
+    não
+    quero perder isso nunca. Aproveitem a leitura e, de antemão, peço perdão pelas lágrimas que causei. Fico no aguardo
+    dos
+    comentários de vocês lá no meu twitter! Até a proxima, bonitinhos xx.
+
+    <br><br>
+
+    <hr><br>
+
+
+
+
+
+
+    <!-- RODAPÉ -->
+
+    <a class="rodape-logo" href="https://winfineline.tumblr.com/" target="_blank"> <img
+            src="https://i.imgur.com/FNc0xxN.png"></a>
+
+    <br><br>
+    <br>
+
+
+
+    </footer>
+
+    </center>
+
+    <br><br>
+
+    </font>
+    </div>
+</body>
+
+</html>
+
+
+<!-- CÓDIGOS ÚTEIS:
+
+<span class="nomes NOME"></span>

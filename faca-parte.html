@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <title>Faça parte da equipe</title>
+    <style>
+        .written-in-fine-line {
+            color: salmon;
+        }
+
+        .titulo,
+        .content {
+            color: salmon;
+            text-align: center;
+            margin-bottom: 8%
+        }
+
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .card {
+            cursor: default !important;
+            margin-bottom: 2em !important;
+        }
+
+        .divider {
+            width: 80% !important;
+            margin: 2% auto 5em auto !important;
+        }
+
+        .segment {
+            margin-top: -5% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 30%;
+            align-items: center;
+            text-align: center;
+            /* margin: 0 auto !important; */
+            padding-bottom: 3% !important;
+        }
+
+        .perfil {
+            display: flex;
+        }
+
+        .ui.small.perfil {
+            margin: 3% auto -2% auto !important;
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: 500rem;
+        }
+
+        .ui.small.image {
+            margin: 0 auto !important;
+            width: 150px !important;
+            height: auto !important;
+        }
+
+        .ui.image {
+            padding-top: 5% !important;
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+        .ui.menu {
+            background: none !important;
+        }
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .ui.menu:first-child {
+            width: 100%;
+        }
+
+        .ui .error .message {
+            margin-top: 2% !important;
+            width: 30% !important;
+            margin: 0 auto;
+        }
+
+        .teal {
+            background: salmon !important;
+        }
+
+        .teal:hover {
+            background: rgb(250, 82, 64) !important;
+        }
+
+        .message {
+            width: 30% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+
+        .ui.form input:not([type]):focus,
+        .ui.form input[type=date]:focus,
+        .ui.form input[type=datetime-local]:focus,
+        .ui.form input[type=email]:focus,
+        .ui.form input[type=file]:focus,
+        .ui.form input[type=number]:focus,
+        .ui.form input[type=password]:focus,
+        .ui.form input[type=search]:focus,
+        .ui.form input[type=tel]:focus,
+        .ui.form input[type=text]:focus,
+        .ui.form input[type=time]:focus,
+        .ui.form input[type=url]:focus {
+            border-color: rgb(250, 82, 64) !important
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 80% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 80% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 80% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 80% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 80% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 80% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 70% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 70% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 70% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+    <div class="pusher">
+
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item" href="embreve.html">EM BREVE</a>
+            <a class="item" href="trailers.html">TRAILERS</a>
+            <a class="item" href="calendario.html">CALENDÁRIO</a>
+            <a class="item active" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+        <img class="ui medium image centered" src="/theme/logo.png">
+        <h1 class="titulo">Faça parte da equipe</h1>
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <form class="ui form"
+                    action="https://docs.google.com/forms/u/4/d/e/1FAIpQLSelXtctlwQ_0nAJMM9XAJxw3z2SpjiSml_DoRZMViKiBIS3gw/formResponse">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="entry.2047333407" placeholder="Nome" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="envelope icon"></i>
+                                <input type="text" name="entry.164554866" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="twitter icon"></i>
+                                <input type="text" name="entry.754563089" placeholder="Twitter" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="file icon"></i>
+                                <input type="text" name="entry.1932181093"
+                                    placeholder="Já escreveu uma fanfic? Coloca aqui o link do docs para a gente dar uma olhada!">
+                            </div>
+                        </div>
+                        <div class="ui fluid large teal submit button">Inscrever</div>
+                    </div>
+
+                    <div class="ui error message"></div>
+
+                </form>
+                <div class="ui message">
+                    Já pensou em fazer parte da equipe do <b class='written-in-fine-line'>Written In Fine Line</b>? <br>
+                    Preencha o formulário e entraremos em contato com você o mais breve possível!
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+        <script>
+            // window.location.replace("https://written-in-fine-line.tumblr.com/");
+
+            $(document)
+                .ready(function () {
+                    $('.ui.form')
+                        .form({
+                            fields: {
+                                nome: {
+                                    identifier: 'entry.164554866',
+                                    rules: [
+                                        {
+                                            type: 'empty',
+                                            prompt: 'Por favor, insira seu email'
+                                        },
+                                        {
+                                            type: 'email',
+                                            prompt: 'Por favor, insira um email válido'
+                                        }
+                                    ]
+                                },
+                                twitter: {
+                                    identifier: 'entry.754563089',
+                                    rules: [
+                                        {
+                                            type: 'empty',
+                                            prompt: 'Por favor, insira seu twitter'
+                                        },
+                                    ]
+                                },
+                                email: {
+                                    identifier: 'entry.2047333407',
+                                    rules: [
+                                        {
+                                            type: 'empty',
+                                            prompt: 'Por favor, insira seu nome'
+                                        },
+                                    ]
+                                }
+                            }
+                        })
+                        ;
+                })
+                ;
+        </script>
+</body>
+
+</html>

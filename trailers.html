@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <title>TRAILERS</title>
+    <style>
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        .nome-trailer {
+            color: salmon;
+            font-style: normal;
+            font-size: 16px
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .card {
+            cursor: default !important;
+            margin-bottom: 2em !important;
+        }
+
+        .trailer {
+            text-align: center;
+            color: salmon
+        }
+
+        .divider {
+            width: 80% !important;
+            margin: 2% auto 5em auto !important;
+        }
+
+        .segment {
+            width: 60%;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto !important;
+            padding-bottom: 3% !important;
+        }
+
+        .perfil {
+            display: flex;
+        }
+
+        .ui.small.perfil {
+            margin: 3% auto -2% auto !important;
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: 500rem;
+        }
+
+        .ui.small.image {
+            margin: 0 auto !important;
+            width: 150px !important;
+            height: auto !important;
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+        .ui.menu {
+            background: none !important;
+        }
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .ui.menu:first-child {
+            width: 100%;
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false">
+    <div class="pusher">
+
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item" href="embreve.html">EM BREVE</a>
+            <a class="item active" href="trailers.html">TRAILERS</a>
+            <a class="item" href="calendario.html">CALENDÁRIO</a>
+            <a class="item" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+
+        <h1 class="trailer">TRAILERS</h1>
+
+        <br>
+
+        <!-- COMO SABER O ID DO VIDEO -->
+
+        <!-- https://www.youtube.com/watch?v=Ojp71GGm-LQ -->
+        <!-- CASO O LINK SEJA PARECIDO COM O LINK ACIMA 
+            O ID DO VIDEO É TUDO QUE VEM DEPOIS DO v= -->
+
+        <!-- https://youtu.be/Ojp71GGm-LQ   -->
+        <!-- CASO O LINK SEJA PARECIDO COM O LINK ACIMA 
+        O ID DO VIDEO É TUDO QUE VEM DEPOIS DA BARRA -->
+
+        <!-- LINK DO YOUTUBE DEVE SER https://www.youtube.com/embed/IDdoVIDEO -->
+        <!-- PRIMEIRA COLUNA -->
+        <div class="ui link centered cards">
+
+            <!-- Primeiro cartão -->
+            <div class="card">
+                <div class="content">
+                    <i class="nome-trailer">Nome Trailer</i>
+                    <div class="right floated meta">
+                        <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                    </div>
+                </div>
+                <div class="image">
+                    <iframe width="290" height="240" src="https://www.youtube.com/embed/Eb0L24QXY4s" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginahistória">Nome história</a></div>
+                    <div class="meta">categoria</div>
+                    <div class="description">
+                        Descrição sobre história
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                        <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                    </span>
+                    <span>
+                        <i class="pencil icon"></i>
+                        NOME AUTORA
+                    </span>
+                </div>
+            </div>
+
+            <!-- Segundo cartão -->
+            <div class="card">
+                <div class="content">
+                    <i class="nome-trailer">Nome Trailer</i>
+                    <div class="right floated meta">
+                        <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                    </div>
+                </div>
+                <div class="image">
+                    <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> -->
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginahistória">Nome história</a></div>
+                    <div class="meta">categoria</div>
+                    <div class="description">
+                        Descrição sobre história
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                        <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                    </span>
+                    <span>
+                        <i class="pencil icon"></i>
+                        NOME AUTORA
+                    </span>
+                </div>
+            </div>
+
+            <!-- Terceiro cartão -->
+            <div class="card">
+                <div class="content">
+                    <i class="nome-trailer">Nome Trailer</i>
+                    <div class="right floated meta">
+                        <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                    </div>
+                </div>
+                <div class="image">
+                    <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> -->
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginahistória">Nome história</a></div>
+                    <div class="meta">categoria</div>
+                    <div class="description">
+                        Descrição sobre história
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                        <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                    </span>
+                    <span>
+                        <i class="pencil icon"></i>
+                        NOME AUTORA
+                    </span>
+                </div>
+            </div>
+
+            <!-- Quarto cartão -->
+            <div class="card">
+                <div class="content">
+                    <i class="nome-trailer">Nome Trailer</i>
+                    <div class="right floated meta">
+                        <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                    </div>
+                </div>
+                <div class="image">
+                    <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> -->
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginahistória">Nome história</a></div>
+                    <div class="meta">categoria</div>
+                    <div class="description">
+                        Descrição sobre história
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                        <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                    </span>
+                    <span>
+                        <i class="pencil icon"></i>
+                        NOME AUTORA
+                    </span>
+                </div>
+            </div>
+
+            <!-- SEGUNDA COLUNA -->
+            <div class="ui link centered cards">
+
+                <!-- Primeiro cartão -->
+                <div class="card">
+                    <div class="content">
+                        <i class="nome-trailer">Nome Trailer</i>
+                        <div class="right floated meta">
+                            <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginahistória">Nome história</a></div>
+                        <div class="meta">categoria</div>
+                        <div class="description">
+                            Descrição sobre história
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">
+                            <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                            <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                        </span>
+                        <span>
+                            <i class="pencil icon"></i>
+                            NOME AUTORA
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Segundo cartão -->
+                <div class="card">
+                    <div class="content">
+                        <i class="nome-trailer">Nome Trailer</i>
+                        <div class="right floated meta">
+                            <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginahistória">Nome história</a></div>
+                        <div class="meta">categoria</div>
+                        <div class="description">
+                            Descrição sobre história
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">
+                            <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                            <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                        </span>
+                        <span>
+                            <i class="pencil icon"></i>
+                            NOME AUTORA
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Terceiro cartão -->
+                <div class="card">
+                    <div class="content">
+                        <i class="nome-trailer">Nome Trailer</i>
+                        <div class="right floated meta">
+                            <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginahistória">Nome história</a></div>
+                        <div class="meta">categoria</div>
+                        <div class="description">
+                            Descrição sobre história
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">
+                            <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                            <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                        </span>
+                        <span>
+                            <i class="pencil icon"></i>
+                            NOME AUTORA
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Quarto cartão -->
+                <div class="card">
+                    <div class="content">
+                        <i class="nome-trailer">Nome Trailer</i>
+                        <div class="right floated meta">
+                            <a href="#linkvideoyoutube"><i class="youtube icon large"></i></a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <!-- <iframe width="290" height="240" src="#linkvideoyoutube" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginahistória">Nome história</a></div>
+                        <div class="meta">categoria</div>
+                        <div class="description">
+                            Descrição sobre história
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">
+                            <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                            <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                        </span>
+                        <span>
+                            <i class="pencil icon"></i>
+                            NOME AUTORA
+                        </span>
+                    </div>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+</body>
+
+</html>

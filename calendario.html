@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" rel="stylesheet" />
+    <title>Calendário</title>
+    <style>
+        html {
+            height: 100% !important;
+            width: 100% !important;
+            overflow: hidden !important;
+        }
+
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .ui.menu:first-child {
+            width: 100% !important;
+            height: 56px !important;
+            font-size: 14px !important;
+        }
+
+        .fc-content,
+        .fc-event {
+            font-size: 14px !important;
+            background-color: salmon !important;
+            border: 1px solid salmon !important;
+            white-space: normal !important;
+        }
+
+        .fc {
+            width: 60% !important;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto !important;
+            margin-top: 5% !important;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+                margin-left: 0 !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+
+            .fc {
+                width: 80% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 5% !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+
+            .fc {
+                width: 80% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 80% !important;
+                margin-left: 2em !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+
+            .fc {
+                width: 50% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 15% !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+
+
+            .fc {
+                width: 50% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 5% !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+
+            .fc {
+                width: 50% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 5% !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+
+            .fc {
+                width: 50% !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto !important;
+                margin-top: 5% !important;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return true">
+
+    <div class="pusher">
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item" href="embreve.html">EM BREVE</a>
+            <a class="item" href="trailers.html">TRAILERS</a>
+            <a class="item active" href="calendario.html">CALENDÁRIO</a>
+            <a class="item" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+        <div id='calendar' class="calendar"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            calendar = $('#calendar').fullCalendar({
+                ignoreTimezone: true,
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+                dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+                buttonText: {
+                    prevYear: "&nbsp;&lt;&lt;&nbsp;",
+                    nextYear: "&nbsp;&gt;&gt;&nbsp;",
+                    today: "Hoje",
+                    month: "Mês",
+                    week: "Semana",
+                    day: "Dia"
+                }
+            });
+
+
+            //Eventos
+            $("#calendar").fullCalendar("renderEvent", {
+                title: "Mostrar pra Babs", //NOME DO EVENTO
+                start: "Nov 10 2020",  // 3 PRIMEIRAS LETRAS DO MES (EM INGLÊS), DIA E ANO
+                allDay: true, //EVENTO DE DIA INTEIRO -- CASO TENHA HORARIO PRA TERMINAR SÓ ACRESCENTAR O HORÁRIO NA ABA START E TROCAR DE TRUE PARA FALSE
+                end: ""
+            }, true);
+
+
+            $("#calendar").fullCalendar("renderEvent", {
+                title: "Sexta feira 13", //NOME DO EVENTO
+                start: "Nov 13 2020", // 3 PRIMEIRAS LETRAS DO MES (EM INGLÊS), DIA E ANO
+                allDay: true, //EVENTO DE DIA INTEIRO -- CASO TENHA HORARIO PRA TERMINAR SÓ ACRESCENTAR O HORÁRIO NA ABA START E TROCAR DE TRUE PARA FALSE
+                end: "" // CASO O EVENTO TENHA DIA ESPECÍFICO OU HORÁRIO PARA TERMINAR
+            }, true);
+
+            $("#calendar").fullCalendar("renderEvent", {
+                title: "Evento grande", //NOME DO EVENTO
+                start: "Dec 25 2020", // 3 PRIMEIRAS LETRAS DO MES (EM INGLÊS), DIA E ANO
+                allDay: true,  //EVENTO DE DIA INTEIRO -- CASO TENHA HORARIO PRA TERMINAR SÓ ACRESCENTAR O HORÁRIO NA ABA START E TROCAR DE TRUE PARA FALSE
+                end: "" // CASO O EVENTO TENHA DIA ESPECÍFICO OU HORÁRIO PARA TERMINAR
+            }, true);
+        });
+
+    </script>
+</body>
+
+</html>

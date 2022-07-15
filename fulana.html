@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fulana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <style>
+        .card {
+            cursor: default !important;
+        }
+
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .card {
+            cursor: default !important;
+            margin-bottom: 2em !important;
+        }
+
+        .escritora {
+            color: salmon
+        }
+
+        .divider {
+            width: 80% !important;
+            margin: 2% auto 5em auto !important;
+        }
+
+        .segment {
+            width: 60%;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto !important;
+            padding-bottom: 3% !important;
+        }
+
+        .perfil {
+            display: flex;
+        }
+
+        .ui.small.perfil {
+            margin: 3% auto -2% auto !important;
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: 500rem;
+        }
+
+        .ui.small.image {
+            margin: 0 auto !important;
+            width: 150px !important;
+            height: auto !important;
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+        .ui.menu {
+            background: none !important;
+        }
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .ui.menu:first-child {
+            width: 100%;
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false">
+    <div class="pusher">
+
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item active" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item" href="embreve.html">EM BREVE</a>
+            <a class="item" href="trailers.html">TRAILERS</a>
+            <a class="item" href="calendario.html">CALENDÁRIO</a>
+            <a class="item" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+
+        <br><br>
+        <div class="ui tall stacked segment">
+            <img class="ui small circular perfil" src="theme/semFoto.png"><br>
+            <h1 class="escritora">Fulana</h1>
+            <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+            </p>
+            <div class="extra content">
+                <span class="right floated">
+                    <a href="#linktwitter"><i class="twitter icon large"></i></a>
+                    <a href="#linkinstagram"><i class="instagram icon large"></i></a>
+                </span>
+            </div>
+        </div>
+        </h2>
+
+        <div class="divider"></div>
+        <!-- PRIMEIRA COLUNA -->
+        <div class="ui link centered cards">
+            <!-- Primeiro cartão -->
+            <div class="card">
+                <div class="image">
+                    <img src="theme/semFoto.png">
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                    <div class="meta">categoria história</div>
+                    <div class="description">
+                        Sinopse história
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas.
+                            Vestibulum
+                            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                            quam
+                            egestas
+                            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span>
+                        <i class="book icon"></i> Escrita em: Setembro de 2020
+                    </span>
+                </div>
+            </div>
+
+            <!-- Segundo cartão -->
+            <div class="card">
+                <div class="image">
+                    <img src="theme/semFoto.png">
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                    <div class="meta">categoria história</div>
+                    <div class="description">
+                        Sinopse história
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas.
+                            Vestibulum
+                            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                            quam
+                            egestas
+                            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span>
+                        <i class="book icon"></i> Escrita em: Setembro de 2020
+                    </span>
+                </div>
+            </div>
+            <!-- Terceiro cartão -->
+            <div class="card">
+                <div class="image">
+                    <img src="theme/semFoto.png">
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                    <div class="meta">categoria história</div>
+                    <div class="description">
+                        Sinopse história
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas.
+                            Vestibulum
+                            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                            quam
+                            egestas
+                            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span>
+                        <i class="book icon"></i> Escrita em: Setembro de 2020
+                    </span>
+                </div>
+            </div>
+
+            <!-- Quarto cartão -->
+            <div class="card">
+                <div class="image">
+                    <img src="theme/semFoto.png">
+                </div>
+                <div class="content">
+                    <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                    <div class="meta">categoria história</div>
+                    <div class="description">
+                        Sinopse história
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas.
+                            Vestibulum
+                            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                            quam
+                            egestas
+                            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <span>
+                        <i class="book icon"></i> Escrita em: Setembro de 2020
+                    </span>
+                </div>
+            </div>
+            <br><br>
+            <!-- SEGUNDA COLUNA -->
+            <div class="ui link centered cards">
+                <!-- Primeiro cartão -->
+                <div class="card">
+                    <div class="image">
+                        <img src="theme/semFoto.png">
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                        <div class="meta">categoria história</div>
+                        <div class="description">
+                            Sinopse história
+                            <p>
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Vestibulum
+                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                                amet
+                                quam
+                                egestas
+                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span>
+                            <i class="book icon"></i> Escrita em: Setembro de 2020
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Segundo cartão -->
+                <div class="card">
+                    <div class="image">
+                        <img src="theme/semFoto.png">
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                        <div class="meta">categoria história</div>
+                        <div class="description">
+                            Sinopse história
+                            <p>
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Vestibulum
+                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                                amet
+                                quam
+                                egestas
+                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span>
+                            <i class="book icon"></i> Escrita em: Setembro de 2020
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Terceiro cartão -->
+                <div class="card">
+                    <div class="image">
+                        <img src="theme/semFoto.png">
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                        <div class="meta">categoria história</div>
+                        <div class="description">
+                            Sinopse história
+                            <p>
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Vestibulum
+                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                                amet
+                                quam
+                                egestas
+                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span>
+                            <i class="book icon"></i> Escrita em: Setembro de 2020
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Quarto cartão -->
+                <div class="card">
+                    <div class="image">
+                        <img src="theme/semFoto.png">
+                    </div>
+                    <div class="content">
+                        <div class="header"><a href="#paginafanfic">Nome história</a></div>
+                        <div class="meta">categoria história</div>
+                        <div class="description">
+                            Sinopse história
+                            <p>
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Vestibulum
+                                tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                                amet
+                                quam
+                                egestas
+                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span>
+                            <i class="book icon"></i> Escrita em: Setembro de 2020
+                        </span>
+                    </div>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+                <script>
+                    $('a.sidebar-toggle').click(function () {
+                        $('#sidebar').sidebar('toggle')
+                    })
+                </script>
+</body>
+
+</html>

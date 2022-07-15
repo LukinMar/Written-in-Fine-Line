@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <title>Formulário</title>
+    <style>
+        .hidden {
+            display: none !important;
+        }
+
+        .titulo,
+        .content {
+            color: salmon;
+            text-align: center;
+            margin-bottom: 8%
+        }
+
+        a {
+            cursor: pointer !important;
+            color: salmon
+        }
+
+        a:hover {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .card {
+            cursor: default !important;
+            margin-bottom: 2em !important;
+        }
+
+        .divider {
+            width: 80% !important;
+            margin: 2% auto 5em auto !important;
+        }
+
+        .segment {
+            margin-top: -5% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 30%;
+            align-items: center;
+            text-align: center;
+            /* margin: 0 auto !important; */
+            padding-bottom: 3% !important;
+        }
+
+        .perfil {
+            display: flex;
+        }
+
+        .ui.small.perfil {
+            margin: 3% auto -2% auto !important;
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: 500rem;
+        }
+
+        .ui.small.image {
+            margin: 0 auto !important;
+            width: 150px !important;
+            height: auto !important;
+        }
+
+        .ui.image {
+            padding-top: 5% !important;
+        }
+
+        body.pushable {
+            background: white !important;
+        }
+
+        .ui.menu {
+            background: none !important;
+        }
+
+        .pushable>.pusher {
+            overflow: visible !important;
+        }
+
+        .sidebar .icon {
+            color: salmon;
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.sidebar.visible {
+            background: white;
+            width: 10%;
+        }
+
+        .active {
+            color: rgb(250, 82, 64) !important
+        }
+
+        .ui.visible.uncover.sidebar {
+            width: 866px;
+        }
+
+        .ui.image.logo {
+            margin-left: 30px !important;
+        }
+
+        .ui.image.computador {
+            margin-left: 10px;
+            width: 50px !important;
+        }
+
+        .ui.menu.fixed {
+            height: 5%;
+        }
+
+        .ui.menu:first-child {
+            width: 100%;
+        }
+
+        .ui .error .message {
+            margin-top: 2% !important;
+            width: 30% !important;
+            margin: 0 auto;
+        }
+
+        .teal {
+            background: salmon !important;
+        }
+
+        .teal:hover {
+            background: rgb(250, 82, 64) !important;
+        }
+
+        .message {
+            width: 30% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .ui.dropdown .menu>.item>.image,
+        .ui.dropdown .menu>.item>img,
+        .ui.dropdown>.text>.image,
+        .ui.dropdown>.text>img {
+            display: inline-block;
+            width: auto;
+            margin-top: -.5em;
+            margin-bottom: -.5em;
+            max-height: 2.5em !important;
+        }
+
+        .ui.selection.active.dropdown .menu {
+            border-color: salmon !important;
+            box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
+        }
+
+        .ui.selection.active.dropdown {
+            border-color: salmon !important;
+            box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
+        }
+
+        .ui.image {
+            padding-top: 0% !important;
+        }
+
+        .ui.selection.dropdown:focus {
+            border-color: salmon !important;
+            box-shadow: none;
+        }
+
+        .ui.form input:not([type]):focus,
+        .ui.form input[type=date]:focus,
+        .ui.form input[type=datetime-local]:focus,
+        .ui.form input[type=email]:focus,
+        .ui.form input[type=file]:focus,
+        .ui.form input[type=number]:focus,
+        .ui.form input[type=password]:focus,
+        .ui.form input[type=search]:focus,
+        .ui.form input[type=tel]:focus,
+        .ui.form input[type=text]:focus,
+        .ui.form input[type=time]:focus,
+        .ui.form input[type=url]:focus {
+            border-color: rgb(250, 82, 64) !important
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: 435px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 80% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 80% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 80% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ui.menu {
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 80% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 80% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 80% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile hidden"],
+            [class*="tablet only"]:not(.mobile),
+            [class*="computer only"]:not(.mobile),
+            [class*="large screen only"]:not(.mobile),
+            [class*="widescreen only"]:not(.mobile),
+            [class*="or lower hidden"] {
+                display: none !important;
+            }
+        }
+
+        /* Tablet / iPad Portrait */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            .segment {
+                margin-top: 1% !important;
+                width: 70% !important;
+            }
+
+            .ui .error .message {
+                margin-top: 2% !important;
+                width: 70% !important;
+                margin: 0 auto;
+            }
+
+            .message {
+                width: 70% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [class*="mobile only"]:not(.tablet),
+            [class*="tablet hidden"],
+            [class*="computer only"]:not(.tablet),
+            [class*="large screen only"]:not(.tablet),
+            [class*="widescreen only"]:not(.tablet),
+            [class*="or lower hidden"]:not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Computer / Desktop / iPad Landscape */
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not(.computer),
+            [class*="tablet only"]:not(.computer),
+            [class*="computer hidden"],
+            [class*="large screen only"]:not(.computer),
+            [class*="widescreen only"]:not(.computer),
+            [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Large Monitor */
+        @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+            .ui.menu {
+                box-shadow: none !important;
+            }
+
+            [class*="mobile only"]:not([class*="large screen"]),
+            [class*="tablet only"]:not([class*="large screen"]),
+            [class*="computer only"]:not([class*="large screen"]),
+            [class*="large screen hidden"],
+            [class*="widescreen only"]:not([class*="large screen"]),
+            [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+                display: none !important;
+            }
+        }
+
+        /* Widescreen Monitor */
+        @media only screen and (min-width: 1920px) {
+
+            [class*="mobile only"]:not([class*="widescreen"]),
+            [class*="tablet only"]:not([class*="widescreen"]),
+            [class*="computer only"]:not([class*="widescreen"]),
+            [class*="large screen only"]:not([class*="widescreen"]),
+            [class*="widescreen hidden"],
+            [class*="widescreen or lower hidden"] {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pusher">
+
+        <div class="ui stackable container menu">
+            <div class="item">
+                <br><br>
+                <img class="ui small image computador" src="/theme/logo.png">
+            </div>
+            <a class="item" href="homepage.html">PÁGINA INICIAL</a>
+            <a class="item" href="escritoras.html">AUTORAS</a>
+            <a class="item" href="oneshots.html">ONESHOT</a>
+            <a class="item" href="short.html">SHORT</a>
+            <a class="item" href="long.html">LONG</a>
+            <a class="item" href="embreve.html">EM BREVE</a>
+            <a class="item" href="trailers.html">TRAILERS</a>
+            <a class="item" href="calendario.html">CALENDÁRIO</a>
+            <a class="item" href="faca-parte.html">FAÇA PARTE</a>
+            <a class="item" href="#">PLAYLISTS</a>
+        </div>
+        <img class="ui medium image centered" src="/theme/logo.png">
+        <h1 class="titulo">Fique por dentro do Written-in-Fine-Line</h1>
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <form class="ui form"
+                    action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfCPUkRijSDYSoIcaByM45DnOhVJiENWL9ThoXCU7uXCQPWxA/formResponse">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="entry.1768097386" placeholder="Nome" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="envelope icon"></i>
+                                <input type="text" name="entry.1169321496" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="hidden">
+                                <input type="text" name="entry.50267360" id="hidden" placeholder="TA FOFOCANDO NÉ?">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui selection dropdown" id="dropdown">
+                                <input type="hidden" id name="user">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Friend</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Luke Hemmings">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/ljzJRGz.png">
+                                        Luke Hemmings
+                                    </div>
+                                    <div class="item" data-value="Calum Hood">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/x09O4ku.png">
+                                        Calum Hood
+                                    </div>
+                                    <div class="item" data-value="Michael Clifford">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/NiWO74D.jpg">
+                                        Michael Clifford
+                                    </div>
+                                    <div class="item" data-value="Ashton Irwin">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/nMgiF3g.png">
+                                        Ashton Irwin
+                                    </div>
+                                    <div class="item" data-value="Harry Styles">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/msSL0zA.jpg">
+                                        Harry Styles
+                                    </div>
+                                    <div class="item" data-value="Zayn Malik">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/sjhJQyu.jpg">
+                                        Zayn Malik
+                                    </div>
+                                    <div class="item" data-value="Niall Horan">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/PxOvgIN.jpg">
+                                        Niall Horan
+                                    </div>
+                                    <div class="item" data-value="Liam Payne">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/ICGyzlz.jpg">
+                                        Liam Payne
+                                    </div>
+                                    <div class="item" data-value="Louis Tomlinson">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/1UxChRL.jpg">
+                                        Louis Tomlinson
+                                    </div>
+                                    <div class="item" data-value="Shawn Mendes">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/12kHcQ1.jpg">
+                                        Shawn Mendes
+                                    </div>
+                                    <div class="item" data-value="Kim Namjoon">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/yv2mcU5.jpg">
+                                        Kim Namjoon
+                                    </div>
+                                    <div class="item" data-value="Kim Seokjin">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/XDUYz1s.jpg">
+                                        Kim Seokjin
+                                    </div>
+                                    <div class="item" data-value="Min Yoongi">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/oBb1OEM.jpg">
+                                        Min Yoongi
+                                    </div>
+                                    <div class="item" data-value=" Jung Hoseok">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/1bb06uL.jpg">
+                                        Jung Hoseok
+                                    </div>
+                                    <div class="item" data-value="Park Jimin">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/4h1LLe0.jpg">
+                                        Park Jimin
+                                    </div>
+                                    <div class="item" data-value=" Kim Taehyung">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/mJQSNN6.jpg">
+                                        Kim Taehyung
+                                    </div>
+                                    <div class="item" data-value="Jeon Jungkook">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/D6yYBSM.jpg">
+                                        Jeon Jungkook
+                                    </div>
+                                    <div class="item" data-value="Outros">
+                                        <img class="ui mini avatar image" src="https://i.imgur.com/mALinbJ.png">
+                                        Outros
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui fluid large teal submit button">Cadastrar</div>
+                    </div>
+
+                    <div class="ui error message"></div>
+
+                </form>
+                <div class="ui message">
+                    Cadastre-se e receba em primeira mão avisos sobre nossas fanfics, <br>links
+                    para os trailers
+                    e, é
+                    claro, <br>spoilers exclusivos!
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+        <script>
+            // window.location.replace("https://written-in-fine-line.tumblr.com/");
+
+
+            $('.dropdown').dropdown({
+                onChange: function (value, text, $choice) {
+                    document.getElementById('hidden').value = value;
+                }
+            });
+
+
+
+            $(document)
+                .ready(function () {
+                    $('.ui.form')
+                        .form({
+                            fields: {
+                                nome: {
+                                    identifier: 'entry.1169321496',
+                                    rules: [
+                                        {
+                                            type: 'empty',
+                                            prompt: 'Por favor, insira seu email'
+                                        },
+                                        {
+                                            type: 'email',
+                                            prompt: 'Por favor, insira um email válido'
+                                        }
+                                    ]
+                                },
+                                email: {
+                                    identifier: 'entry.1768097386',
+                                    rules: [
+                                        {
+                                            type: 'empty',
+                                            prompt: 'Por favor, insira seu nome'
+                                        },
+                                    ]
+                                }
+                            }
+                        })
+                        ;
+                })
+                ;
+        </script>
+</body>
+
+</html>
